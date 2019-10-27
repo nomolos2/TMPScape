@@ -1,31 +1,42 @@
 <html>
   <style>
     body{
-      background-color:blue;
+      background:linear-gradient(blue 30%,lightgrey);
     }
     .smallTitle{
-    color:white;
-    font-size:35;
-    font: calibri;
+      color:#d3d3d3;
+      font-size:33px;
+      font-family:"Comic Sans",sans-serif;
+    }
+    .smallerTitle{
+      color:#d3d3d3;
+      font-size:28px;
+      font-family:"Comic Sans",sans-serif;
     }
     .largeTitle{
-      color:white;
-      font-size:50;
-      font: calibri;
+        color:lightgrey;
+        font-size:45px;
+        font-family:"Comic Sans",sans-serif;
+    }
+    .padder{
+      padding-top:4%;
+    }
+    .keepLeft{
+      padding-right:60%;
     }
     button{
-      color:blue;
-      background-color:white;
-      font:calibri;
+        color:lightgrey;
+        background:blue;
+        font-family:"Comic Sans",sans-serif;
+        font-size:20px;
+        border-radius:150px;
       }
-    .position{
-      position:relative;
-      top:30px;
+
   </style>
   <body>
     <center>
-        <p class="smallTitle" class=> Welcome To <span class="largeTitle"> TPMScape </span> </p>
-        <p class="smallTitle"> The World's First and Only Commerative Takoma Park Magenet Experience Escape Room Game</p>
+        <p class="largeTitle padder"> <strong>Welcome To TPMScape </strong></p>
+        <p class="smallTitle"> <strong></strong>The Takoma Park Magnet Experience Escape Room Game</p>
           <div style="visibility:hidden">
             <audio autoplay loop>
               <source src="TPMScape Home Theme.mp3">
@@ -35,5 +46,7 @@
           <button type="button">Press To Begin</button>
         </a>
     </center>
+    <p class="smallerTitle"> Instructions: </p>
+    <p class="keepLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
   </body>
 </html>
