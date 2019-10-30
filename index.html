@@ -27,6 +27,9 @@
     .padder{
       padding-top:4%;
     }
+    .imgPadder{
+      padding-top:20%;
+    }
     .keepLeft{
       padding-right:60%;
     }
@@ -37,13 +40,31 @@
         font-size:20px;
         border-radius:150px;
       }
-    .rightify{
-      float:right;
+    .topLeftFloater{
+       position: absolute;;
+       top:0px;
+       left:0px;
     }
-    
-
+    .topRightFloater{
+      position: absolute;;
+      top:0px;
+      right:0px;
+    }
+    .bottomLeftFloater{
+      position: absolute;;
+      bottom:0px;
+      left:0px;
+    }
+    .bottomRightFloater{
+      position: absolute;;
+      bottom:0px;
+      right:0px;
+    }
   </style>
   <body>
+     <img src="./images/adastra.jpg" class="topLeftFloater" width="100px"/>
+     <img src="./images/adastra.jpg" class="topRightFloater" width="100px"/>
+  
     <center>
         <p class="largeTitle padder"> <strong>Welcome To TPMScape </strong></p>
         <p class="smallTitle"> <strong></strong>The Takoma Park Magnet Experience Escape Room Game</p>
@@ -63,6 +84,7 @@
     </center>
     <p class="smallerTitle"> Instructions: </p>
     <p class="smallestTitle keepLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <img src="./images/adastra.jpg" class="rightify"/>
+    <img src="./images/adastra.jpg" class="bottomLeftFloater imgPadder" width="100px"/>
+    <img src="./images/adastra.jpg" class="BottomRightFloater imgPadder" width="100px"/>
   </body>
 </html>
