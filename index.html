@@ -79,12 +79,15 @@
              <audio loop id="sound1">
                <source src="Dubstep.mp3">
              </audio> 
-           </div>
+              </div>
           <button id="close" class="closing nearRight" onClick="javascript:close_clip() document.getElementById('sound1').play();">
            <img src="./images/volume.png" width="50px"/>
-          </button>
-          <button type="button"> Press To Begin </button>
-          <audio src="Dubstep.mp3" autoplay loop controls></audio>
+          <audio id="player" src="Dubstep.mp3"></audio>
+           <div>
+            <button onclick="document.getElementById('player').play()">Play</button>
+            <button onclick="document.getElementById('player').pause()">Pause</button>
+            <button onclick="document.getElementById('player').muted=!document.getElementById('player').muted">Mute/ Unmute</button>
+           </div>
       
     </center>
     <p class="smallerTitle"> Instructions: </p>
