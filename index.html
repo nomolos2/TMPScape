@@ -1,106 +1,64 @@
 <html>
-  <style>
-    body{
-      background:linear-gradient(blue 30%,lightgrey);
-    }
-    .smallTitle{
-      color:#d3d3d3;
-      font-size:33px;
-      font-family:"Comic Sans",sans-serif;
-    }
-    .smallerTitle{
-      color:#d3d3d3;
-      font-size:28px;
-      font-family:"Comic Sans",sans-serif;
-    }
-    .smallestTitle{
-      font-family:"Comic Sans",sans-serif;
-      font-size:15px;
-      color: lightgrey;
-    }
+  <head>
+    <title>TPMScape</title>
+    <link rel="stylesheet" href="style.css"
+    type="text/css">
 
-    .largeTitle{
-        color:lightgrey;
-        font-size:45px;
-        font-family:"Comic Sans",sans-serif;
-    }
-    .padder{
-      padding-top:4%;
-    }
-    .imgPadder{
-      padding-top:20%;
-    }
-    .keepLeft{
-      padding-right:60%;
-    }
-    button{
-        color:lightgrey;
-        background:white;
-        font-family:"Comic Sans",sans-serif;
-        font-size:20px;
-        border-radius:150px;
-      }
-    .topLeftFloater{
-       position: absolute;;
-       top:0px;
-       left:0px;
-    }
-    .topRightFloater{
-      position: absolute;;
-      top:0px;
-      right:0px;
-    }
-     .nearRight{
-      position: absolute;;
-      top:0px;
-      right:100px;
-    }
-    .bottomLeftFloater{
-      position: absolute;;
-      bottom:0px;
-      left:0px;
-    }
-    .bottomRightFloater{
-      position: absolute;;
-      bottom:0px;
-      right:0px;
-    }
-  </style>
+  </head>
+
   <body>
-     <img src="./images/adastra.jpg" class="topLeftFloater" width="100px"/>
-     <img src="./images/adastra.jpg" class="topRightFloater" width="100px"/>
-  
+    <div class="heading">
+      <span class="bigTitle">TPMScape</span>
+      <span class="title2">A Commemorative Escape Room Game</span>
+      <p1 class="directions"><br><br><br>Welcome to the TPMS commemorative escape room game! This game is created and presented by Maya Evans, Grace Doughty, Kieran Ferguson and Solomon Gold. <br> <br> Starting at one of the first floor classrooms, you travel the school in a firsthand experience to four of the most iconic classrooms of the Magnet experience. 
+        Traveling through these rooms will be a test of your patience, meme knowledge and street smarts as you play to escape these classrooms. <br> <br>How to play:
+        Before each escape room you will receive a hint in the form of a Wake-Up Takoma announcement. This hint will tell you which classroom to go to. Once in the classroom, your job is to click on items or places you see in the room, solve the puzzles, and escape!
+        Once you solve the final problem, you will receive a key from the room, something memorable from that teacher. Once you have collected all the keys, you will graduate and be set free from the school!
+        <br> <br>Click on the button below for your first hint.</p1>
+    </div>
     <center>
-       
-        <p class="largeTitle padder"> <strong>Welcome To TPMScape </strong></p>
-        <p class="smallTitle"> <strong></strong>The Takoma Park Magnet Experience Escape Room Game</p>
 
-           <div style="visibility:hidden">
-             <audio loop id="sound1">
-               <source src="Dubstep.mp3">
-             </audio> 
-              </div>
-          <audio id="player" src="Dubstep.mp3" loop ></audio>
-           <div>
-            <button onclick="playPause()" class="closing nearRight" >
-             <img src="./images/volume.png" width="50px"/>
-            </button>
-           </div>
-      
+           
+          <div style="visibility:hidden">
+              <audio loop id="sound1">
+                <source src="Dubstep.mp3">
+              </audio>
+               </div>
+           <audio id="player" src="Dubstep.mp3" loop ></audio>
+            <div>
+             <button onclick="playPause()" class="audio" >
+              <img src="./images/volume2.png" width="50px"/>
+             </button>
+            </div>
+
     </center>
-    <p class="smallerTitle"> Instructions: </p>
-    <p class="smallestTitle keepLeft">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <img src="./images/adastra.jpg" class="bottomLeftFloater imgPadder" width="100px"/>
-    <img src="./images/adastra.jpg" class="BottomRightFloater imgPadder" width="100px"/>
-    <script> 
-    var myVideo = document.getElementById("player");
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+    <button class="hint">
+        HINT
+    </button>
+
+    <br><br><br><br><br>
     
-    function playPause() { 
-      if (myVideo.paused) 
-        myVideo.play(); 
-      else 
-        myVideo.pause(); 
-} 
-</script> 
+    <center>
+      <img class="firstfloor" src="./images/floormap1.png.jpeg"/>
+      <img class="secondfloor" src="./images/floormap2.png"/>
+      <img class="thirdfloor" src="./images/floormap3.png"/>
+    </center>
+
+   <script>
+      var myVideo = document.getElementById("player");
+     
+      function playPause() {
+        if (myVideo.paused)
+          myVideo.play();
+        else
+          myVideo.pause();
+   }
+   </script>
+   
+  
   </body>
 </html>
