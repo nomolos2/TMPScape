@@ -16,7 +16,9 @@ function chooseHint(){
     alert('hi 4');
   }
   
-  
+ function promptify(){
+   prompt('duck')
+ }
    
 
   
