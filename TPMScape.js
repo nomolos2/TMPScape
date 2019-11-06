@@ -1,24 +1,44 @@
-function chooseHint(){
-  var hint = Math.random()
-  hint = hint * 4
-  hint = Math.round(hint)
-  
-  if (hint == 1) {
-    alert("hi 1");
-  }
-  else if (hint == 2) {
-    alert('hi 2');
-  }
-  else if (hint == 3) {
-    alert('hi 3');
-  }
-   else if (hint == 4) {
-    alert('hi 4');
-  }
-  
- function promptify(){
-   prompt('duck')
- }
-   
+let myVideo = document.getElementById("player");
 
+function playPause() {
+  if (myVideo.paused)
+    myVideo.play();
+  else
+    myVideo.pause();
+}
+
+function establishHints() {
+    localStorage.setItem("hints", "Conley|Goehring|Taliff|Porch")
+  }
+  window.curHint = ""
+
+function getHint() {
+  let hints = localStorage.getItem('hints').split(/\|/)
+  if (hints.length == 0)
+    throw new Error("out of hints")
   
+  hints = _.shuffle(hints)
+  hint = hints.pop()
+  localStorage.setItem("hints", hints.join('|'))
+  window.curHint = hint
+  return(hint)
+}
+
+
+
+function chooseHint(){
+  let hint = getHint()
+  alert(`hi ${hint}`)
+}
+
+function checkHint(name){
+  debugger
+  if (curHint == name){
+    window.location.href = `${name}Page.html`;
+  }
+  else{
+    window.location.href = "errorPage.html";
+  }
+
+}
+

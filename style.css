@@ -87,7 +87,20 @@ body{
     background-color: black;
     filter: invert(100%);
 }
-
+.restart{
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 69px;
+    height: 69px;
+    margin-right: 5px;
+    margin-top: 5px;
+    background-color: transparent;
+    color:white;
+    border-radius: 360px;
+    transition: filter 1000ms, background-color 1000ms, border 1000ms, color 1000ms;
+    border: 3px solid white;
+}
 
 
 .maps{
