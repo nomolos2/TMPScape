@@ -36,7 +36,7 @@
     <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 
-    <button onclick="chooseHint() promptify()" class="hint">
+    <button onclick="chooseHint()" class="hint">
       HINT
     </button>
 
@@ -60,6 +60,7 @@
           myVideo.play();
         else
           myVideo.pause();
+      }
       function chooseHint(){
         let hint = Math.random()
         hint = hint * 4
