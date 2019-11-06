@@ -7,13 +7,13 @@ function chooseHint(){
     alert("hi 1");
   }
   else if (hint == 2) {
-    alert("hi 2");
+    alert('hi 2');
   }
   else if (hint == 3) {
-    alert("hi 3");
+    alert('hi 3');
   }
    else if (hint == 4) {
-    alert("hi 4");
+    alert('hi 4');
   }
   
   
