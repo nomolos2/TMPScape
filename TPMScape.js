@@ -1,7 +1,7 @@
 function chooseHint(){
   var hint = Math.random()
-  var hint = hint * 4
-  var hint = Math.round(hint)
+  hint = hint * 4
+  hint = Math.round(hint)
   
   if (hint == 1) {
     alert("hi 1");
