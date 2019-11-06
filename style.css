@@ -37,6 +37,7 @@ body{
 .hint{
     position: relative;
     bottom:30%
+    left:50%
     display:block;
     width:180px;
     height:50px;
