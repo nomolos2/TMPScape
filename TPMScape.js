@@ -9,22 +9,23 @@ function playPause() {
 
 function establishHints() {
     localStorage.setItem("hints", "Conley|Goehring|Taliff|Porch")
-  }
-  window.curHint = ""
+}
 
+window.curHint = ""
 function getHint() {
-  let hints = localStorage.getItem('hints').split(/\|/)
-  if (hints.length == 0)
-    throw new Error("out of hints")
-  
+  let hints = localStorage.getItem('hints')
+
+  if (!hints || !hints.length) {
+    hints = establishHints()
+  }
+
+  hints = hints.split(/\|/)
   hints = _.shuffle(hints)
   hint = hints.pop()
   localStorage.setItem("hints", hints.join('|'))
   window.curHint = hint
   return(hint)
 }
-
-
 
 function chooseHint(){
   let hint = getHint()
