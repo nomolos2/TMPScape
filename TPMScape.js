@@ -1,15 +1,20 @@
-let myVideo = document.getElementById("player");
+
 
 function playPause() {
-  if (myVideo.paused)
+  let myVideo = document.getElementById("player");
+  if (myVideo.paused) {
     myVideo.play();
-  else
+    document.getElementById("audioImg").src="offVolume.png"
+  } else {
     myVideo.pause();
+    document.getElementById("audioImg").src="volume.png"   
+  }
 }
 
 function establishHints() {
     localStorage.setItem("hints", "Conley|Goehring|Taliff|Porch")
-}
+  }
+ 
 
 window.curHint = ""
 function getHint() {
@@ -26,6 +31,9 @@ function getHint() {
   window.curHint = hint
   return(hint)
 }
+
+
+
 
 function chooseHint(){
   let hint = getHint()

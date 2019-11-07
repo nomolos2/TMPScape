@@ -73,7 +73,6 @@ body{
     height: 69px;
     margin-right: 5px;
     margin-top: 5px;
-    background-image: url('/images/volume2.png');
     background-color: transparent;
     border-radius: 360px;
     transition: filter 1000ms, background-color 1000ms, border 1000ms, color 1000ms;
