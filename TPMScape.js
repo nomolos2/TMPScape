@@ -4,7 +4,7 @@ function playPause() {
   var myVideo = document.getElementById("player");
   if (myVideo.paused){
     myVideo.play();
-    document.getElementById("audioImg").src="images/volume.png";
+    document.getElementById("audioImg").src="images/volume2.png";
   }
   else
   { myVideo.pause();
