@@ -8,7 +8,7 @@ function playPause() {
   }
   else
   { myVideo.pause();
-   document.getElementById(audioImg).style.image = source(offVolume.png);
+   document.getElementById(audioImg).style.image = source(mute.png);
 }
 }
 
