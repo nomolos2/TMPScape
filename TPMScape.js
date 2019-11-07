@@ -1,11 +1,13 @@
 
 
 function playPause() {
-  let myVideo = document.getElementById("player");
-  if (myVideo.paused)
+  var myVideo = document.getElementById("player");
+  if (myVideo.paused){
     myVideo.play();
+  }
   else
-    myVideo.pause();
+  { myVideo.pause();
+}
 }
 
 function establishHints() {
