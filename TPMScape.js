@@ -4,11 +4,11 @@ function playPause() {
   var myVideo = document.getElementById("player");
   if (myVideo.paused){
     myVideo.play();
-    document.getElementById(audioImg).style.image = source(volume.png);
+    document.getElementById("audioImg").src="images/volume.png";
   }
   else
   { myVideo.pause();
-   document.getElementById(audioImg).style.image = source(mute.png);
+   document.getElementById("audioImg").src="images/offVolume.png"
 }
 }
 
