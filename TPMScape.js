@@ -4,11 +4,11 @@ function playPause() {
   var myVideo = document.getElementById("player");
   if (myVideo.paused){
     myVideo.play();
-    document.getElementById("audioImg").source="./images/mute.png";
+    document.getElementById("audioImg").source="./images/volume2.png";
   }
   else
   { myVideo.pause();
-   document.getElementById("audioImg").source="./images/volume2.png"
+   document.getElementById("audioImg").source="./images/offVolume.png"
 }
 }
 
@@ -47,4 +47,3 @@ function checkHint(name){
   }
 
 }
-
