@@ -135,5 +135,9 @@
     border-radius: 5px;
 }
 .tallifPageBody{
-  background-image:url('./images/TPMSBuilding.png');
+    background-image:url('./images/TPMSBuilding.png');
+    background-position:center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
