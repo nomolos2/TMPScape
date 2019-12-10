@@ -1,10 +1,1 @@
 
-body{
-    background-color:rgb(13, 13, 19);
-    background-image:url('./images/TPMSBuilding.png');
-    background-position:center;
-    background-size:cover;
-    background-blend-mode:soft-light;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
