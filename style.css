@@ -7,7 +7,6 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-
 .heading{
     width:700px;
     height:85%;
@@ -134,4 +133,7 @@
     width: 40%;
     border: 3px solid white;
     border-radius: 5px;
+}
+.tallifPageBody{
+  background-image:url('./images/TPMSBuilding.png');
 }
