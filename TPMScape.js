@@ -1,7 +1,7 @@
 
 
 function playPause() {
-  var myVideo = document.getElementById("player");
+  let myVideo = document.getElementById("player");
   if (myVideo.paused){
     myVideo.play();
     document.getElementById("audioImg").src="images/volume2.png";
@@ -38,7 +38,6 @@ function chooseHint(){
 }
 
 function checkHint(name){
-  debugger
   if (curHint == name){
     window.location.href = `${name}Page.html`;
   }
@@ -48,24 +47,25 @@ function checkHint(name){
 
 }
 // Set the date we're counting down to
-var countDownDate = Date.now() + 600000
+let countDownDate = Date.now() + 600000
 
 // Update the count down every 1 second
-var x = setInterval(function() {
+let x = setInterval(function() {
 
   // Get today's date and time
-  var now = new Date().getTime();
+  let now = new Date().getTime();
     
   // Find the distance between now and the count down date
-  var distance = countDownDate - now;
+  let distance = countDownDate - now;
     
   // Time calculations for days, hours, minutes and seconds
-  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
   // Output the result in an element with id="demo"
   if( seconds >= 10){
-  document.getElementById("demo").innerHTML = `${minutes}:${seconds}`
+    demo = document.getElementById("demo")
+    demo && (demo.innerHTML = `${minutes}:${seconds}`)
   }
   else{
     document.getElementById("demo").innerHTML = `${minutes}:0${seconds}`
@@ -73,6 +73,18 @@ var x = setInterval(function() {
   // If the count down is over, write some text 
   if (distance < 0) {
     clearInterval(x);
-    document.getElementById("demo").innerHTML = "EXPIRED";
+    demo = document.getElementById("demo")
+    demo && (demo.innerHTML = "expired")
   }
 }, 1000);
+
+function leftImageChanger() {
+  let ground = document.getElementsByTagName("body")[0];
+  let image = document.getElementById("corner1");
+  ground.style.backgroundImage = './images/mute2.png'
+    if(image.src === "http://127.0.0.1:8080/images/mute2.png")
+      image.src="./images/TPMSBuilding.png";
+
+    else
+      image.src="./images/mute2.png"
+}

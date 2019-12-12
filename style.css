@@ -1,4 +1,4 @@
-body{
+.indexBody{
     background-color:rgb(13, 13, 19);
     background-image:url('./images/TPMSBuilding.png');
     background-position:center;
@@ -133,4 +133,26 @@ body{
     width: 40%;
     border: 3px solid white;
     border-radius: 5px;
+}
+.taliffBody{
+    background-color:rgb(13, 13, 19);
+    background-image:url('./images/TPMSBuilding.png');
+    background-position:center;
+    background-size:cover;
+    background-blend-mode:soft-light;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.tallifCornerOne{
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color:transparent;
+}
+.tallifCornerTwo{
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    background-color:transparent;
 }
