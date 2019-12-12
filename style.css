@@ -144,15 +144,21 @@
     background-attachment: fixed;
 }
 
-.tallifCornerOne{
+.tOne{
     position: absolute;
     left: 0px;
     top: 0px;
     background-color:transparent;
 }
-.tallifCornerTwo{
+.tTwo{
     position: absolute;
-    right: 0px;
+    left: 70px;
+    top: 0px;
+    background-color:transparent;
+}
+.tThree{
+    position: absolute;
+    left: 140px;
     top: 0px;
     background-color:transparent;
 }

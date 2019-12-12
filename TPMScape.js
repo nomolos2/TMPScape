@@ -78,12 +78,15 @@ let x = setInterval(function() {
   }
 }, 1000);
 
-function leftImageChanger() {
+function imageChanger1() {
   let ground = document.getElementsByTagName("body")[0];
-  let image = document.getElementById("corner1");
-  // ground.style.backgroundImage = './images/mute2.png'
-   if(image.src === "http://127.0.0.1:8080/images/mute2.png")
-     image.src="./images/TPMSBuilding.png";
-   else
-      image.src="./images/mute2.png"
+  ground.style.backgroundImage = 'url(./images/mute2.png)'
+}
+function imageChanger2() {
+  let ground = document.getElementsByTagName("body")[0];
+  ground.style.backgroundImage = 'url(./images/volume2.png)'
+}
+function imageChanger3() {
+  let ground = document.getElementsByTagName("body")[0];
+  ground.style.backgroundImage = 'url(./images/TPMSBuilding.png)'
 }
