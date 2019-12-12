@@ -81,10 +81,9 @@ let x = setInterval(function() {
 function leftImageChanger() {
   let ground = document.getElementsByTagName("body")[0];
   let image = document.getElementById("corner1");
-  ground.style.backgroundImage = './images/mute2.png'
-    if(image.src === "http://127.0.0.1:8080/images/mute2.png")
-      image.src="./images/TPMSBuilding.png";
-
-    else
+  // ground.style.backgroundImage = './images/mute2.png'
+   if(image.src === "http://127.0.0.1:8080/images/mute2.png")
+     image.src="./images/TPMSBuilding.png";
+   else
       image.src="./images/mute2.png"
 }
