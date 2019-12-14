@@ -89,4 +89,7 @@ function imageChanger2() {
 function imageChanger3() {
   let ground = document.getElementsByTagName("body")[0];
   ground.style.backgroundImage = 'url(./images/TPMSBuilding.png)'
+  let input = document.getElementById('tInput')
+  input.style.left = 100
+  
 }

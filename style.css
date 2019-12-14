@@ -162,3 +162,7 @@
     top: 0px;
     background-color:transparent;
 }
+.tInput{
+    position: absolute;
+    top:70px;
+}
