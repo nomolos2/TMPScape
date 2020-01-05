@@ -2,16 +2,17 @@
  <script type="text/javascript" src="TPMScape.js"></script>
  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
  <link rel="stylesheet" href="style.css" type="text/css">
-<body class="taliffBody">
-    <button class="tOne" onclick="imageChanger1()"  >
-        <img  src="./images/mute2.png" width="50px"/>
+<body>
+    <image src="./images/mute2.jpg" class="img-main" id='main'/>
+    <button class="imageOne" onclick="imageChanger('./images/mute2.png')"  >
+        <img  src="./images/mute2.png" width="150px"/>
     </button>
-    <button class="tTwo" onclick =  "imageChanger2()">
-            <img  id="audioImg" src="images/volume2.png" width="50px"/>
+    <button class="imageTwo" onclick =  "imageChanger('./images/volume2.png')">
+            <img  id="audioImg" src="./images/volume2.png" width="150px"/>
     </button>
-    <button class="tThree" onclick =  "imageChanger3()">
-        <img  id="audioImg" src="images/TPMSBuilding.png" width="50px"/>
+    <button class="imageThree" onclick =  "imageChanger3('./images/TPMSBuilding.png')">
+        <img  id="audioImg" src="images/TPMSBuilding.png" width="150px"/>
 </button>
-<input class="tInput" id=".tInput">
+<p id="demo" class="timer"></p>
 </body>
 </html>

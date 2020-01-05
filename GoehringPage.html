@@ -6,23 +6,22 @@
   </head>
 
   <body>
-    <center>
-           
-          <div style="visibility:hidden">
-              <audio loop id="sound1">
-                <source src="Dubstep.mp3">
-              </audio>
-               </div>
-           <audio id="player" src="THE PHOTOSYNTHESIS SONG.mp3" loop ></audio>
-            <div>
-             <button id="audioImg" onclick="playPause()" class="audio" >
-            <div>
-              <div>
-               <img src="./images/volume2.png" width="50px"/>
-             </button>
-          </div>
-          
+    <image src="./camerafiles/leftSideView2.jpg" class="img-main" id='main'/ usemap="#zoom"/>
+    <button class="imageOne" onclick="imageChanger('./camerafiles/leftSideView2.jpg')"  >
+    <img  src="./camerafiles/leftSideView2.jpg" width="150px"/>
+  </button>
+  <button class="imageTwo" onclick =  "imageChanger('./camerafiles/WindowView4.jpg')">
+        <img  id="audioImg" src="./camerafiles/WindowView4.jpg" width="150px"/>
+  </button>
+  <button class="imageThree" onclick =  "imageChanger('./camerafiles/rightSideView1.jpg')">
+    <img  id="audioImg" src="./camerafiles/rightSideView1.jpg" width="150px"/>
+  </button>
+  <p id="demo" class="timer"></p>
+  <div id='junk'>
 
-    </center>
+  </div>
+  <map name="zoom">
+      <area shape="rect" coords="603,309,647,401" alt="Zoom" onclick="alert('Conley')" >
+  </map>
   </body>
 </html>

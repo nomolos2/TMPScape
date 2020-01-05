@@ -3,20 +3,27 @@
 <head>
  <script type="text/javascript" src="TPMScape.js"></script>
  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-p {
-  text-align: center;
-  font-size: 60px;
-  margin-top: 0px;
-}
- <h1>porch</h1>
+ <link rel="stylesheet" href="style.css" type="text/css">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
 </style>
 </head>
 <body>
-
-<p id="demo"></p>
+    <image src="./images/volume2.png" class="img-main" id='main'/>
+    <button class="imageOne" onclick="imageChanger('./images/mute2.png')"  >
+        <img  src="./images/mute2.png" width="150px"/>
+    </button>
+    <button class="imageTwo" onclick =  "imageChanger('./images/volume2.png')">
+            <img  id="audioImg" src="./images/volume2.png" width="150px"/>
+    </button>
+    <button class="imageThree" onclick =  "imageChanger3('./images/TPMSBuilding.png')">
+        <img  id="audioImg" src="images/TPMSBuilding.png" width="150px"/>
+    </button>
+<p id="demo" class="timer"><span></span></p>
 
 </body>
 </html>
 
+
+
+    

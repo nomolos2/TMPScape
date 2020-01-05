@@ -78,18 +78,7 @@ let x = setInterval(function() {
   }
 }, 1000);
 
-function imageChanger1() {
-  let ground = document.getElementsByTagName("body")[0];
-  ground.style.backgroundImage = 'url(./images/mute2.png)'
-}
-function imageChanger2() {
-  let ground = document.getElementsByTagName("body")[0];
-  ground.style.backgroundImage = 'url(./images/volume2.png)'
-}
-function imageChanger3() {
-  let ground = document.getElementsByTagName("body")[0];
-  ground.style.backgroundImage = 'url(./images/TPMSBuilding.png)'
-  let input = document.getElementById('tInput')
-  input.style.left = 100
-  
+function imageChanger (url) {
+  let main = document.getElementById('main');
+  main.src = url
 }

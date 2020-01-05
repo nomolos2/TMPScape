@@ -134,35 +134,58 @@
     border: 3px solid white;
     border-radius: 5px;
 }
-.taliffBody{
-    background-color:rgb(13, 13, 19);
+.taliffImage{
     background-image:url('./images/TPMSBuilding.png');
+}
+.conleyImage{
+    background-image:url('./images/mute2.png');
+}
+.goehringImage{
+    background-image:url('./camerafiles/leftSideView2.jpg');
+}
+.porchImage{
+    background-image:url('./images/volume2.png');
+}
+.roomBody{
     background-position:center;
     background-size:cover;
     background-blend-mode:soft-light;
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
-
-.tOne{
+.imageOne{
     position: absolute;
     left: 0px;
     top: 0px;
     background-color:transparent;
 }
-.tTwo{
+.imageTwo{
     position: absolute;
-    left: 70px;
+    left: 160px;
     top: 0px;
     background-color:transparent;
 }
-.tThree{
+.imageThree{
     position: absolute;
-    left: 140px;
+    left: 320px;
     top: 0px;
     background-color:transparent;
 }
 .tInput{
     position: absolute;
     top:70px;
+}
+.timer{
+    text-align: right;
+    font-size: 60px;
+    margin-top: 0px;
+    background-color:white;
+  }
+.img-main {
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    margin:0;
+    padding:0;
 }
