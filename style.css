@@ -116,24 +116,13 @@
     align-content: center;
 }
 
-#firstfloor{
-    width: 40%;
-    border: 3px solid white;
-    border-radius: 5px;
-
+.secondfloor{
+    width: 35%;
+    border: 5px solid white;
+    border-radius: 3px;
+    padding: 5px;
 }
 
-#secondfloor{
-    width: 40%;
-    border: 3px solid white;
-    border-radius: 5px;
-}
-
-#thirdfloor{
-    width: 40%;
-    border: 3px solid white;
-    border-radius: 5px;
-}
 .taliffImage{
     background-image:url('./images/TPMSBuilding.png');
 }
