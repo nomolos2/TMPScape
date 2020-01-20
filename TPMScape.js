@@ -82,3 +82,4 @@ function imageChanger (url) {
   let main = document.getElementById('main');
   main.src = url
 }
+
