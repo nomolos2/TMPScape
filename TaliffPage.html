@@ -1,18 +1,32 @@
+  
 <html>
- <script type="text/javascript" src="TPMScape.js"></script>
- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
- <link rel="stylesheet" href="style.css" type="text/css">
-<body>
-    <image src="./images/mute2.jpg" class="img-main" id='main'/>
-    <button class="imageOne" onclick="imageChanger('./images/mute2.png')"  >
-        <img  src="./images/mute2.png" width="150px"/>
-    </button>
-    <button class="imageTwo" onclick =  "imageChanger('./images/volume2.png')">
-            <img  id="audioImg" src="./images/volume2.png" width="150px"/>
-    </button>
-    <button class="imageThree" onclick =  "imageChanger('./images/TPMSBuilding.png')">
-        <img  id="audioImg" src="images/TPMSBuilding.png" width="150px"/>
-</button>
-<p id="demo" class="timer"></p>
-</body>
-</html>
+    <head>
+    <script type="text/javascript" src="TPMScape.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <link rel="stylesheet" href="taliff.css" type="text/css">
+
+    <script>
+        function imageChanger(){
+            document.getElementbyId('front').style.background-image = url("./images/frontTaliff.jpg");
+        }
+    </script>
+    </head>
+    
+   <body class="taliffBody">
+        <image src="./images/mute2.jpg" class="img-main" id='main'/>
+       <button class="imageOne" onclick =  "imageChanger('./images/frontTaliff.jpg')">
+        <img  id="front" src="./images/frontTaliff.jpg" width="85px"/>
+        </button>
+       <button class="imageTwo" onclick =  "imageChanger('./images/RighsideTaliff.png')">
+               <img  id="right" src="./images/RighsideTaliff.png" width="85px"/>
+       </button>
+       <button class="imageThree" onclick =  "imageChanger('images/backTaliff.png')">
+           <img  id="back" src="images/backTaliff.png" width="85px"/>
+        </button>
+        <button class="imageFour" onclick =  "imageChanger('images/leftsideTaliff.jpg')">
+            <img  id="left" src="images/leftsideTaliff.jpg" width="85px"/>
+         </button>
+   <p id="demo" class="timer"></p>
+   </body>
+   </html>
