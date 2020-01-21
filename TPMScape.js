@@ -83,3 +83,51 @@ function imageChanger (url) {
   main.src = url
 }
 
+function smileyFace(){
+  let main = document.getElementById('main');
+  alert('hi')
+  if (main.src.includes("/rightSideView1.jpg")) {
+    alert('hi');
+    main.src="/camerafiles/travelingLight.jpg"
+  }
+}
+function microscope(){
+  let main = document.getElementById('main');
+  alert(main.clientHeight)
+  if (main.src.includes("/leftSideView2.jpg")) {
+    alert('hi');
+    main.src="/camerafiles/microScopeCloseUp.jpg"
+  }
+}
+
+let origHeight = 800, origWidth = 1422,
+    scaling = [origWidth, origHeight, origWidth, origHeight],
+    microCoords = [676,341,717,448],
+    smileyCoords = [440,187,493,234],
+    microUnitCoords = microCoords.map((v,i) => v / scaling[i])
+    smileyUnitCoords = smileyCoords.map((v,i) => v / scaling[i])
+
+function microFindcoords(imageEl, shapeEl) {
+  let newHeight = imageEl.clientHeight,
+      newWidth = imageEl.clientWidth,
+      newCoords = [newWidth,newHeight,newWidth,newHeight]
+                      .map((v,i) => v * microUnitCoords[i])
+  shapeEl.coords = newCoords.join(",")
+}
+function smileyFindcoords(imageEl, shapeEl) {
+  let newHeight = imageEl.clientHeight,
+      newWidth = imageEl.clientWidth,
+      newCoords = [newWidth,newHeight,newWidth,newHeight]
+                      .map((v,i) => v * smileyUnitCoords[i])
+  shapeEl.coords = newCoords.join(",")
+}
+let setMicroCoords = () => microFindcoords(
+                        document.getElementById("main"),
+                        document.getElementById("microscope-shape"))
+let setSmileyCoords = () => microFindcoords(
+                          document.getElementById("main"),
+                          document.getElementById("smiley"))
+window.onload = setMicroCoords
+window.onresize = setMicroCoords
+window.onload = setSmileyCoords
+window.onresize = setSmileyCoords

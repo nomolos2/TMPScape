@@ -7,27 +7,24 @@
 
   <body>
     <image src="./camerafiles/leftSideView2.jpg" class="img-main" id='main'/ usemap="#zoom"/>
-    <button class="imageOne" onclick="imageChanger('./camerafiles/leftSideView2.jpg')"  >
-    <img  src="./camerafiles/leftSideView2.jpg" width="150px"/>
+    <button  onclick="imageChanger('./camerafiles/leftSideView2.jpg')"  >
+    <img  class="imageOne" src="./camerafiles/leftSideView2.jpg" />
   </button>
-  <button class="imageTwo" onclick =  "imageChanger('./camerafiles/WindowView4.jpg')">
-        <img  id="audioImg" src="./camerafiles/WindowView4.jpg" width="150px"/>
+  <button  onclick =  "imageChanger('./camerafiles/WindowView4.jpg')">
+        <img class="imageTwo" id="audioImg" src="./camerafiles/WindowView4.jpg"/>
   </button>
-  <button class="imageThree" onclick =  "imageChanger('./camerafiles/rightSideView1.jpg')">
-    <img  id="audioImg" src="./camerafiles/rightSideView1.jpg" width="150px"/>
+  <button onclick =  "imageChanger('./camerafiles/rightSideView1.jpg')">
+    <img  class="imageThree" id="audioImg" src="./camerafiles/rightSideView1.jpg"/>
   </button>
   <p id="demo" class="timer"></p>
   <div id='junk'>
 
   </div>
   <map name="zoom">
-<<<<<<< HEAD
-      <area shape="rect" coords="396,167,440,211" alt="Zoom" onclick="goehringClick()" >
-      <area shape="rect" coords="603,309,647,401" alt="Zoom" onclick="goehringClick()" >
-      <area shape="rect" coords="591,329,647,357" alt="Zoom" onclick="goehringClick()" >
-=======
-      <area shape="rect" coords="925,755,1063,805" alt="Zoom" onclick="alert('Conley')" >
->>>>>>> 3d0ea9a74a26dccd76840e42edc2dd4c99a10c07
+      <area id="smiley" shape="rect" alt="Zoom" onclick="smileyFace()" >
+      <area id="microscope-shape" shape="rect" alt="Zoom" onclick="microscope()" >
   </map>
   </body>
 </html>
+coords="676,341,717,448" 
+<!--document.body.addEventListener('mousedown',e => console.log(e.x,e.y))-->
