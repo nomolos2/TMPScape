@@ -85,49 +85,72 @@ function imageChanger (url) {
 
 function smileyFace(){
   let main = document.getElementById('main');
-  alert('hi')
   if (main.src.includes("/rightSideView1.jpg")) {
-    alert('hi');
     main.src="/camerafiles/travelingLight.jpg"
   }
 }
 function microscope(){
   let main = document.getElementById('main');
-  alert(main.clientHeight)
   if (main.src.includes("/leftSideView2.jpg")) {
-    alert('hi');
     main.src="/camerafiles/microScopeCloseUp.jpg"
   }
 }
+function blood(){
+  let main = document.getElementById('main');
+  if (main.src.includes("/WindowView4.jpg")) {
+    main.src="/camerafiles/bloodyCloseUp.jpg"
+  }
+}
+let imageCoords = [
+  {
+    page: 'Goehring',
+    imageid: 'main',
+    imageHeight: 800,
+    imageWidth: 1422,
+    scaling: [1422, 800, 1422, 800],
+    areaid: 'microscope-shape',
+    areaCoords: [676, 341, 717, 448]
+  },
+  {
+    page: 'Goehring',
+    imageid: 'main',
+    imageHeight: 800,
+    imageWidth: 1422,
+    scaling: [1422, 800, 1422, 800],
+    areaid: 'microscope-shape',
+    areaCoords: [676, 341, 717, 448]
+  },
 
+]
+function coordinateFinder(coordinates, image, affectee){
+  let height = image.clientHeight, width = image.clientWidth,
+  final = [width, height, width,height]
+                      .map((v,i) => v*coordinates[i])
+  affectee.coords = final.join(",")
+}
+document.body.onload =   () => {coordinateFinder([(676/1422),(341/800),(717/1422),(448/800)],document.getElementById('main'),document.getElementById('microscope-shape'))
+  coordinateFinder([(440/1422),(187/800),(493/1422),(234/800)],document.getElementById('main'),document.getElementById('smiley-shape'))
+  coordinateFinder([(659/1422),(364/800),(710/1422),(396/800)],document.getElementById('main'),document.getElementById('bloody-shape'))}
+document.body.onresize = () => {coordinateFinder([(676/1422),(341/800),(717/1422),(448/800)],document.getElementById('main'),document.getElementById('microscope-shape'))
+  coordinateFinder([(440/1422),(187/800),(493/1422),(234/800)],document.getElementById('main'),document.getElementById('smiley-shape'))
+  coordinateFinder([(659/1422),(366/800),(730/1422),(406/800)],document.getElementById('main'),document.getElementById('bloody-shape'))}
+
+  /*
 let origHeight = 800, origWidth = 1422,
     scaling = [origWidth, origHeight, origWidth, origHeight],
-    microCoords = [676,341,717,448],
-    smileyCoords = [440,187,493,234],
-    microUnitCoords = microCoords.map((v,i) => v / scaling[i])
-    smileyUnitCoords = smileyCoords.map((v,i) => v / scaling[i])
+    origCoords = [676,341,717,448],
+    unitCoords = origCoords.map((v,i) => v / scaling[i])
 
-function microFindcoords(imageEl, shapeEl) {
+function getcoords(imageEl, shapeEl) {
   let newHeight = imageEl.clientHeight,
       newWidth = imageEl.clientWidth,
-      newCoords = [newWidth,newHeight,newWidth,newHeight]
-                      .map((v,i) => v * microUnitCoords[i])
+      
   shapeEl.coords = newCoords.join(",")
 }
-function smileyFindcoords(imageEl, shapeEl) {
-  let newHeight = imageEl.clientHeight,
-      newWidth = imageEl.clientWidth,
-      newCoords = [newWidth,newHeight,newWidth,newHeight]
-                      .map((v,i) => v * smileyUnitCoords[i])
-  shapeEl.coords = newCoords.join(",")
-}
-let setMicroCoords = () => microFindcoords(
+
+let setCoords = () => getcoords(
                         document.getElementById("main"),
                         document.getElementById("microscope-shape"))
-let setSmileyCoords = () => microFindcoords(
-                          document.getElementById("main"),
-                          document.getElementById("smiley"))
-window.onload = setMicroCoords
-window.onresize = setMicroCoords
-window.onload = setSmileyCoords
-window.onresize = setSmileyCoords
+
+window.onload = setCoords
+window.onresize = setCoords*/

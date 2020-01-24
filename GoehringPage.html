@@ -1,8 +1,7 @@
 <html>
   <head>
     <link rel="stylesheet" href="style.css" type="text/css">
-    <script type="text/javascript" src="TPMScape.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+    
   </head>
 
   <body>
@@ -21,10 +20,19 @@
 
   </div>
   <map name="zoom">
-      <area id="smiley" shape="rect" alt="Zoom" onclick="smileyFace()" >
+      <area id="smiley-shape" shape="rect" alt="Zoom" onclick="smileyFace()" >
       <area id="microscope-shape" shape="rect" alt="Zoom" onclick="microscope()" >
-  </map>
+      <area id="bloody-shape" shape="rect" alt="Zoom" onclick="blood(1)" >
+    </map>
+    <input class="checkbox1" type="checkbox" name="p1" value="Mic">Mic Cooper</input>
+    <p class="checkbox1"> Mic Cooper</p>
+    <input class="checkbox2" type="checkbox" name="p1" value="Mic">Mic Cooper</input>
+    <input class="checkbox3" type="checkbox" name="p1" value="Mic">Mic Cooper</input>
+  
   </body>
-</html>
+  <script type="text/javascript" src="TPMScape.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+
+  </html>
 coords="676,341,717,448" 
 <!--document.body.addEventListener('mousedown',e => console.log(e.x,e.y))-->
