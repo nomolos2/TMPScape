@@ -1,5 +1,3 @@
-
-
 function playPause() {
   let myVideo = document.getElementById("player");
   if (myVideo.paused){
@@ -86,19 +84,19 @@ function imageChanger (url) {
 function smileyFace(){
   let main = document.getElementById('main');
   if (main.src.includes("/rightSideView1.jpg")) {
-    main.src="/camerafiles/travelingLight.jpg"
+    main.src="./camerafiles/travelingLight.jpg"
   }
 }
 function microscope(){
   let main = document.getElementById('main');
   if (main.src.includes("/leftSideView2.jpg")) {
-    main.src="/camerafiles/microScopeCloseUp.jpg"
+    main.src="./camerafiles/microScopeCloseUp.jpg"
   }
 }
 function blood(){
   let main = document.getElementById('main');
   if (main.src.includes("/WindowView4.jpg")) {
-    main.src="/camerafiles/bloodyCloseUp.jpg"
+    main.src="./camerafiles/bloodyCloseUp.jpg"
   }
 }
 let imageCoords = [
@@ -133,7 +131,7 @@ document.body.onload =   () => {coordinateFinder([(676/1422),(341/800),(717/1422
   coordinateFinder([(659/1422),(364/800),(710/1422),(396/800)],document.getElementById('main'),document.getElementById('bloody-shape'))}
 document.body.onresize = () => {coordinateFinder([(676/1422),(341/800),(717/1422),(448/800)],document.getElementById('main'),document.getElementById('microscope-shape'))
   coordinateFinder([(440/1422),(187/800),(493/1422),(234/800)],document.getElementById('main'),document.getElementById('smiley-shape'))
-  coordinateFinder([(659/1422),(366/800),(730/1422),(406/800)],document.getElementById('main'),document.getElementById('bloody-shape'))}
+  coordinateFinder([(627/1422),(349/800),(692/1422),(382/800)],document.getElementById('main'),document.getElementById('bloody-shape'))}
 
   /*
 let origHeight = 800, origWidth = 1422,
