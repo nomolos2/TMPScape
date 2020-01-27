@@ -15,18 +15,20 @@
   <button onclick =  "imageChanger('./camerafiles/rightSideView1.jpg')">
     <img  class="imageThree" id="audioImg" src="./camerafiles/rightSideView1.jpg"/>
   </button>
+  <button id="back" onclick="prev()">BACK</button>
   <p id="demo" class="timer"></p>
   <div id='junk'>
 
   </div>
+
   <map name="zoom">
       <area id="smiley-shape" shape="rect" alt="Zoom" onclick="goehringButton('travelingLight')" >
       <area id="microscope-shape" shape="rect" alt="Zoom" onclick="goehringButton('microscope')" >
       <area id="bloody-shape" shape="rect" alt="Zoom" onclick="goehringButton('blood')" >
     </map>
     <div id="names">
-    <p>The Blood sample found was... TGAGGTACTTGCCAA Click on the person who matches</p>
-    <button>Mic Coopers:</button>
+    <p>Somebody was bleeding, but who. And why? And where? Well the where is obvious, but still. Anyway, but who. Somebody took the blood sample and here it is:TGAGGTACTTGCCAA Match it up. </p>
+    <button id="first" onclick="inner()">Mic Coopers:</button>
     <p>TGAGGTACTTGCCAA</p>
     <button> Nat Beci:</button>
     <p>TTCCGATCGTACCCT</p>

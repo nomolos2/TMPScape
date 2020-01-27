@@ -1,3 +1,7 @@
+let previousPage = "./camerafiles/leftsideView2"
+function prev(){
+  alert(previousPage)
+}
 function playPause() {
   let myVideo = document.getElementById("player");
   if (myVideo.paused){
@@ -80,7 +84,7 @@ function imageChanger (url) {
   let main = document.getElementById('main');
   main.src = url
 }
-
+/*
 function travelingLight(){
   main.src="./camerafiles/travelingLight.jpg"
 
@@ -92,8 +96,7 @@ function microscope(){
 function blood(){
 
 main.src="./camerafiles/bloodyCloseUp.jpg"
-
-}
+}*/
 function goehringButton(puzzle){
   let main = document.getElementById('main');
   data = _.find(puzzleData, d => main.src.includes(d.startPage))
@@ -101,6 +104,7 @@ function goehringButton(puzzle){
   data.func()
   
 }
+
 let puzzleData = [  
   {
     startPage: "/rightSideView1.jpg",
@@ -160,6 +164,7 @@ function setCoordinates() {
 
 
 }
+
 document.body.onload = setCoordinates
 document.body.onresize = setCoordinates
   /*
