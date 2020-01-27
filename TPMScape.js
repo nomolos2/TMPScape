@@ -56,11 +56,11 @@ let x = setInterval(function() {
   let now = new Date().getTime();
     
   // Find the distance between now and the count down date
-  let distance = countDownDate - now;
+  let timeLeft = countDownDate - now;
     
   // Time calculations for days, hours, minutes and seconds
-  let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-  let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  let minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
     
   // Output the result in an element with id="demo"
   if( seconds >= 10){
@@ -71,7 +71,7 @@ let x = setInterval(function() {
     document.getElementById("demo").innerHTML = `${minutes}:0${seconds}`
   }
   // If the count down is over, write some text 
-  if (distance < 0) {
+  if (timeLeft < 0) {
     clearInterval(x);
     demo = document.getElementById("demo")
     demo && (demo.innerHTML = "expired")
@@ -179,8 +179,27 @@ function anagram(text){
   statement.innerHTML = 
   `<label for="anainp">${text} = </label>
   <input name="anainp" class='inputter'></input>`
+  startShuffle(text)
+  alert
 
 
+}
+
+function startShuffle(text) {
+  let shuffleCount = 10
+  let intervalId = setInterval(
+    function (){
+      let phrase = Array.from(text)
+      let newPhrase = _.shuffle(phrase) 
+      newPhrase = newPhrase.join('')
+      statement.innerHTML = 
+      `<label for="anainp">${newPhrase} = </label>
+      <input name="anainp" class='inputter'></input>`
+      shuffleCount = shuffleCount - 1
+      if (shuffleCount <= 0){
+        clearInterval(intervalId)
+      }
+    }, 400)
 }
 document.body.onload = setCoordinates
 document.body.onresize = setCoordinates
@@ -203,4 +222,14 @@ let setCoords = () => getcoords(
                         document.getElementById("microscope-shape"))
 
 window.onload = setCoords
-window.onresize = setCoords*/
+window.onresize = setCoords
+
+class Foo {
+  constructor(x) {
+    this.foo = x
+  }
+  getx() {
+    return this.foo
+  }
+}
+*/
