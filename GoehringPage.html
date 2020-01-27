@@ -26,14 +26,18 @@
       <area id="microscope-shape" shape="rect" alt="Zoom" onclick="goehringButton('microscope')" >
       <area id="bloody-shape" shape="rect" alt="Zoom" onclick="goehringButton('blood')" >
     </map>
-    <div id="names">
+    <div  class="blank" id="names">
     <p>Somebody was bleeding, but who. And why? And where? Well the where is obvious, but still. Anyway, but who. Somebody took the blood sample and here it is:TGAGGTACTTGCCAA Match it up. </p>
-    <button id="first" onclick="inner()">Mic Coopers:</button>
+    <button id="MicCoopers" onclick="anagram('MicCoopers')">Mic Coopers</button>
     <p>TGAGGTACTTGCCAA</p>
-    <button> Nat Beci:</button>
+    <button id="NatBeci" onclick="anagram('NatBeci')">Nat Beci:</button>
     <p>TTCCGATCGTACCCT</p>
-    <button> Ted Posk </button>
+    <button id="TedPosk" onclick="anagram('TedPosk')"> Ted Posk </button>
     <p>ACCAATCATGTTCAG</p>
+    </div>
+    <div id="equation" class="blank">
+      <p id="statement"><input></input></p>
+      
     </div>
   </body>
   <script type="text/javascript" src="TPMScape.js"></script>

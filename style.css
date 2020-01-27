@@ -229,12 +229,27 @@
     width:250px;
     display:none;
 }
+#equation{
+    position:relative;
+    top:70;
+    left:80;
+    color:black;
+    font-size:50;
+    background-color:white;
+    border-radius:5px;
+    display:none;
+
+}
 .label{
     position:absolute;
 
 }
 #back{
     position:absolute;
-    top:0;
-    right:40px;
+    top:30;
+    right:150px;
+    font-size:40;
+}
+.inputter{
+    height:50px;
 }

@@ -1,7 +1,5 @@
-let previousPage = "./camerafiles/leftsideView2"
-function prev(){
-  alert(previousPage)
-}
+let previousPage = "./camerafiles/leftSideView2.jpg"
+
 function playPause() {
   let myVideo = document.getElementById("player");
   if (myVideo.paused){
@@ -82,6 +80,7 @@ let x = setInterval(function() {
 
 function imageChanger (url) {
   let main = document.getElementById('main');
+  previousPage = main.src
   main.src = url
 }
 /*
@@ -100,6 +99,7 @@ main.src="./camerafiles/bloodyCloseUp.jpg"
 function goehringButton(puzzle){
   let main = document.getElementById('main');
   data = _.find(puzzleData, d => main.src.includes(d.startPage))
+  previousPage = main.src
   main.src = data.puzzlePage
   data.func()
   
@@ -164,9 +164,27 @@ function setCoordinates() {
 
 
 }
+function prev(){
+  main = document.getElementById('main')
+  main.src=previousPage
+  boxes = document.getElementsByClassName('blank')
+  Array.from(boxes).forEach(b=>b.style.display="none")
+}
+function anagram(text){
+  names = document.getElementById('names')
+  names.style.display="none"
+  equation = document.getElementById('equation')
+  equation.style.display="inline-block"
+  statement = document.getElementById('statement')
+  statement.innerHTML = 
+  `<label for="anainp">${text} = </label>
+  <input name="anainp" class='inputter'></input>`
 
+
+}
 document.body.onload = setCoordinates
 document.body.onresize = setCoordinates
+
   /*
 let origHeight = 800, origWidth = 1422,
     scaling = [origWidth, origHeight, origWidth, origHeight],
