@@ -11,7 +11,7 @@ function playPause() {
 }
 
 function establishHints() {
-    localStorage.setItem("hints", "Conley|Goehring|Taliff|Porch")
+    localStorage.setItem("hints", "Goehring|Taliff")
 }
 
 window.curHint = ""
@@ -81,58 +81,87 @@ function imageChanger (url) {
   main.src = url
 }
 
-function smileyFace(){
-  let main = document.getElementById('main');
-  if (main.src.includes("/rightSideView1.jpg")) {
-    main.src="./camerafiles/travelingLight.jpg"
-  }
+function travelingLight(){
+  main.src="./camerafiles/travelingLight.jpg"
+
 }
 function microscope(){
-  let main = document.getElementById('main');
-  if (main.src.includes("/leftSideView2.jpg")) {
-    main.src="./camerafiles/microScopeCloseUp.jpg"
-  }
+  main.src="./camerafiles/microScopeCloseUp.jpg"
+
 }
 function blood(){
-  let main = document.getElementById('main');
-  if (main.src.includes("/WindowView4.jpg")) {
-    main.src="./camerafiles/bloodyCloseUp.jpg"
-  }
-}
-let imageCoords = [
-  {
-    page: 'Goehring',
-    imageid: 'main',
-    imageHeight: 800,
-    imageWidth: 1422,
-    scaling: [1422, 800, 1422, 800],
-    areaid: 'microscope-shape',
-    areaCoords: [676, 341, 717, 448]
-  },
-  {
-    page: 'Goehring',
-    imageid: 'main',
-    imageHeight: 800,
-    imageWidth: 1422,
-    scaling: [1422, 800, 1422, 800],
-    areaid: 'microscope-shape',
-    areaCoords: [676, 341, 717, 448]
-  },
 
+main.src="./camerafiles/bloodyCloseUp.jpg"
+
+}
+function goehringButton(puzzle){
+  let main = document.getElementById('main');
+  data = _.find(puzzleData, d => main.src.includes(d.startPage))
+  main.src = data.puzzlePage
+  data.func()
+  
+}
+let puzzleData = [  
+  {
+    startPage: "/rightSideView1.jpg",
+    puzzlePage: "./camerafiles/travelingLight.jpg",
+
+    puzzle: 'travelingLight',
+    page: 'Goehring',
+    imageid: 'main',
+    imageHeight: 800,
+    imageWidth: 1422,
+    scaling: [1422, 800, 1422, 800],
+    areaid: 'smiley-shape',
+    areaCoords: [676, 341, 717, 448],
+  },
+  {
+    startPage: "/leftSideView2.jpg",
+    puzzlePage: "./camerafiles/microScopeCloseup.jpg",
+
+    puzzle: 'microscope',
+    page: 'Goehring',
+    imageid: 'main',
+    imageHeight: 800,
+    imageWidth: 1422,
+    scaling: [1422, 800, 1422, 800],
+    areaid: 'microscope-shape',
+    areaCoords: [676, 341, 717, 448],},
+    {
+      startPage: "/WindowView4.jpg",
+      puzzlePage: "./camerafiles/bloodyCloseUp.jpg",
+  
+      puzzle: 'blood',
+      page: 'Goehring',
+      func:bloodFunction,
+      imageid: 'main',
+      imageHeight: 800,
+      imageWidth: 1422,
+      scaling: [1422, 800, 1422, 800],
+      areaid: 'microscope-shape',
+      areaCoords: [676, 341, 717, 448],},
 ]
+function bloodFunction(){
+  let dna = document.getElementById('names')
+  dna.style.display="block"
+}
 function coordinateFinder(coordinates, image, affectee){
   let height = image.clientHeight, width = image.clientWidth,
   final = [width, height, width,height]
                       .map((v,i) => v*coordinates[i])
   affectee.coords = final.join(",")
 }
-document.body.onload =   () => {coordinateFinder([(676/1422),(341/800),(717/1422),(448/800)],document.getElementById('main'),document.getElementById('microscope-shape'))
+function setCoordinates() {
+  //let areas = document.querySelectorAll("area")
+  //areas.forEach(a => a.onclick = )
+  coordinateFinder([(676/1422),(341/800),(717/1422),(448/800)],document.getElementById('main'),document.getElementById('microscope-shape'))
   coordinateFinder([(440/1422),(187/800),(493/1422),(234/800)],document.getElementById('main'),document.getElementById('smiley-shape'))
-  coordinateFinder([(659/1422),(364/800),(710/1422),(396/800)],document.getElementById('main'),document.getElementById('bloody-shape'))}
-document.body.onresize = () => {coordinateFinder([(676/1422),(341/800),(717/1422),(448/800)],document.getElementById('main'),document.getElementById('microscope-shape'))
-  coordinateFinder([(440/1422),(187/800),(493/1422),(234/800)],document.getElementById('main'),document.getElementById('smiley-shape'))
-  coordinateFinder([(627/1422),(349/800),(692/1422),(382/800)],document.getElementById('main'),document.getElementById('bloody-shape'))}
+  coordinateFinder([(659/1422),(364/800),(710/1422),(396/800)],document.getElementById('main'),document.getElementById('bloody-shape'))
 
+
+}
+document.body.onload = setCoordinates
+document.body.onresize = setCoordinates
   /*
 let origHeight = 800, origWidth = 1422,
     scaling = [origWidth, origHeight, origWidth, origHeight],
