@@ -80,7 +80,7 @@ let x = setInterval(function() {
 
 function imageChanger (url) {
   let main = document.getElementById('main');
-  previousPage = main.src
+  prev()
   main.src = url
 }
 /*
@@ -170,7 +170,9 @@ function prev(){
   boxes = document.getElementsByClassName('blank')
   Array.from(boxes).forEach(b=>b.style.display="none")
 }
+let chosen=""
 function anagram(text){
+  chosen=text
   names = document.getElementById('names')
   names.style.display="none"
   equation = document.getElementById('equation')
@@ -178,13 +180,29 @@ function anagram(text){
   statement = document.getElementById('statement')
   statement.innerHTML = 
   `<label for="anainp">${text} = </label>
-  <input name="anainp" class='inputter'></input>`
+  <input name="anainp" class='inputter'></input><button>SUMBIT ANSWER</button>`
   startShuffle(text)
-  alert
 
 
 }
 
+function checkAnswer(){
+  //debugger
+  statement = document.getElementById('statement')
+  answer = document.getElementById('inputter')
+  if (answer.value == "microscope"){
+    statement.innerHTML="Congratulations, Now Figure Out What That Means"
+  }  
+  else{
+    text = statement.innerHTML
+    statement.innerHTML=`<label for="anainp"> You Messed Up = </label><input name="anainp" id='inputter'></input><button onclick="checkAnswer()">SUBMIT ANSWER</button>`
+    interval = 10
+    setTimeout(function(){
+      startShuffle(chosen);;
+  }, 2000); 
+
+  }  
+  }
 function startShuffle(text) {
   let shuffleCount = 10
   let intervalId = setInterval(
@@ -194,12 +212,13 @@ function startShuffle(text) {
       newPhrase = newPhrase.join('')
       statement.innerHTML = 
       `<label for="anainp">${newPhrase} = </label>
-      <input name="anainp" class='inputter'></input>`
+      <input name="anainp" id='inputter'></input><button onclick="checkAnswer()">SUBMIT ANSWER</button>`
+      
       shuffleCount = shuffleCount - 1
       if (shuffleCount <= 0){
         clearInterval(intervalId)
       }
-    }, 400)
+    }, 300)
 }
 document.body.onload = setCoordinates
 document.body.onresize = setCoordinates
