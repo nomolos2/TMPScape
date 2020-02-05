@@ -134,7 +134,7 @@ let puzzleData = [
   },
   {
     startPage: "/leftSideView2.jpg",
-    puzzlePage: "./camerafiles/microScopeCloseup.jpg",
+    puzzlePage: "./camerafiles/microScopeCloseUp.jpg",
 
     puzzle: 'microscope',
 
