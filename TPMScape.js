@@ -83,28 +83,28 @@ function imageChanger (url) {
   prev()
   main.src = url
 }
-/*
-function travelingLight(){
-  main.src="./camerafiles/travelingLight.jpg"
-
-}
-function microscope(){
-  main.src="./camerafiles/microScopeCloseUp.jpg"
-
-}
-function blood(){
-
-main.src="./camerafiles/bloodyCloseUp.jpg"
-}*/
 function goehringButton(puzzle){
   let main = document.getElementById('main');
   data = _.find(puzzleData, d => main.src.includes(d.startPage))
   previousPage = main.src
-  main.src = data.puzzlePage
-  data.func()
+
+  if(puzzle =='hydro'){
+    data = _.find(puzzleData, d => "hydro"==d.puzzle)
+    main.src = data.puzzlePage
+    data.func()
+  }
+  else{
+    main.src = data.puzzlePage
+    data.func()
+  }
+  
+ 
   
 }
-
+function hydroFunction(){
+  let leaves = document.getElementById('leaves')
+  leaves.style.display = 'block'
+}
 let puzzleData = [  
   {
     startPage: "/rightSideView1.jpg",
@@ -121,9 +121,23 @@ let puzzleData = [
   },
   {
     startPage: "/leftSideView2.jpg",
+    puzzlePage: "./camerafiles/hydroponicCloseup2.jpg",
+    func:hydroFunction,
+    puzzle: 'hydro',
+    page: 'Goehring',
+    imageid: 'main',
+    imageHeight: 800,
+    imageWidth: 1422,
+    scaling: [1422, 800, 1422, 800],
+    areaid: 'smiley-shape',
+    areaCoords: [676, 341, 717, 448],
+  },
+  {
+    startPage: "/leftSideView2.jpg",
     puzzlePage: "./camerafiles/microScopeCloseup.jpg",
 
     puzzle: 'microscope',
+
     page: 'Goehring',
     imageid: 'main',
     imageHeight: 800,
@@ -161,6 +175,7 @@ function setCoordinates() {
   coordinateFinder([(676/1422),(341/800),(717/1422),(448/800)],document.getElementById('main'),document.getElementById('microscope-shape'))
   coordinateFinder([(440/1422),(187/800),(493/1422),(234/800)],document.getElementById('main'),document.getElementById('smiley-shape'))
   coordinateFinder([(659/1422),(364/800),(710/1422),(396/800)],document.getElementById('main'),document.getElementById('bloody-shape'))
+  coordinateFinder([(595/1400),(144/788),(650/1400),(172/788)],document.getElementById('main'),document.getElementById('hydro-shape'))
 
 
 }

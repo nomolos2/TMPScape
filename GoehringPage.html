@@ -5,7 +5,7 @@
   </head>
 
   <body>
-    <image src="./camerafiles/leftSideView2.jpg" class="img-main" id='main'/ usemap="#zoom"/>
+    <image src="./camerafiles/leftSideView2.jpg" class="img-main" id='main' />
     <button  onclick="imageChanger('./camerafiles/leftSideView2.jpg')"  >
     <img  class="imageOne" src="./camerafiles/leftSideView2.jpg" />
   </button>
@@ -15,6 +15,9 @@
   <button onclick =  "imageChanger('./camerafiles/rightSideView1.jpg')">
     <img  class="imageThree" id="audioImg" src="./camerafiles/rightSideView1.jpg"/>
   </button>
+    <button  onclick="imageChanger('./camerafiles/frontView3.jpg')"  >
+    <img  class="imageFour" src="./camerafiles/frontView3.jpg" />
+  </button>
   <button id="back" onclick="prev()">BACK</button>
   <p id="demo" class="timer"></p>
   <div id='junk'>
@@ -22,9 +25,11 @@
   </div>
 
   <map name="zoom">
-      <area id="smiley-shape" shape="rect" alt="Zoom" onclick="goehringButton('travelingLight')" >
-      <area id="microscope-shape" shape="rect" alt="Zoom" onclick="goehringButton('microscope')" >
-      <area id="bloody-shape" shape="rect" alt="Zoom" onclick="goehringButton('blood')" >
+      <area id="smiley-shape" shape="rect" alt="Zoom" onclick="goehringButton('')" >
+      <area id="microscope-shape" shape="rect" alt="Zoom" onclick="goehringButton('')" >
+      <area id="bloody-shape" shape="rect" alt="Zoom" onclick="goehringButton('')" >
+      <area id="hydro-shape" shape="rect" alt="Zoom" onclick="goehringButton('hydro')" >
+
     </map>
     <div  class="blank" id="names">
     <p>Somebody was bleeding, but who. And why? And where? Well the where is obvious, but still. Anyway, but who. Somebody took the blood sample and here it is:TGAGGTACTTGCCAA Match it up. </p>
@@ -39,6 +44,7 @@
       <p id="statement"></p>
       
     </div>
+    <input class="blank" id="leaves"></input>
   </body>
   <script type="text/javascript" src="TPMScape.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
