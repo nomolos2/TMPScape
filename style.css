@@ -306,3 +306,11 @@
     font-size:30px;
   
 }
+#higher{
+    position: absolute;
+    left: 20%;
+    top:0px;
+    color:white;
+    font-size:100px;
+    display:none;
+}

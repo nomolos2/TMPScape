@@ -1,3 +1,4 @@
+
 let previousPage = "./camerafiles/leftSideView2.jpg"
 
 function playPause() {
@@ -83,56 +84,22 @@ function imageChanger (url) {
   prev()
   main.src = url
 }
-function microscopeFunction(){
-  //debugger
-  let video = document.getElementById('video')
-  video.style.display="block"
-  let input = document.getElementById('input2')
-  input.style.display = "block"
-  input.innerHTML = "<input id='hidden-box'></input><button onclick='checkAnswer(\"celebration\",celeCorrect,celeWrong,\"hidden-box\")'>SUBMIT ANSWER LOWERCASE PLEASE</button>"
-  let disp = document.getElementById("disp")
-  disp.style.display = "none"
+function coordinateFinder(coordinates, image, affectee){
+  let height = image.clientHeight, width = image.clientWidth,
+  final = [width, height, width,height]
+                      .map((v,i) => v*coordinates[i])
+  affectee.coords = final.join(",")
 }
-function celeCorrect(){
-  statement = document.getElementById('input2')
-  statement.style.color="white"
-  statement.style.fontSize="30px"
-  statement.innerHTML="<input id='hidden-box'></input><button onclick='checkAnswer(\"celebration\",celeCorrect,celeWrong,\"hidden-box\")'>SUBMIT ANSWER LOWERCASE PLEASE</button>"
-  video.src="./videos/v2.mp4"
-  alert(statement.innerHTML)
-}
-function celeWrong(){
-  let input = document.getElementById('input2')
-  input.style.fontSize="30px"
-  input.innerHTMl = "Bye"
-}
-function punnetFunction(){
-    punny = document.getElementById("punneter")
-    punny.style.display="block"
-}
-function goehringButton(puzzle){
-  let main = document.getElementById('main');
-  data = _.find(puzzleData, d => main.src.includes(d.startPage))
-  previousPage = main.src
-
-  if(puzzle =='hydro'){
-    data = _.find(puzzleData, d => "hydro"==d.puzzle)
-    main.src = data.puzzlePage
-    data.func()
-  }
-  else{
-    main.src = data.puzzlePage
-    data.func()
-  }
-  
- 
-  
-}
+function setCoordinates() {
+  //let areas = document.querySelectorAll("area")
+  //areas.forEach(a => a.onclick = )
+  coordinateFinder([(676/1422),(341/800),(717/1422),(448/800)],document.getElementById('main'),document.getElementById('microscope-shape'))
+  coordinateFinder([(757/1422),(431/800),(860/1422),(531/800)],document.getElementById('main'),document.getElementById('punnet-shape'))
+  coordinateFinder([(440/1422),(187/800),(493/1422),(234/800)],document.getElementById('main'),document.getElementById('smiley-shape'))
+  coordinateFinder([(659/1422),(364/800),(710/1422),(396/800)],document.getElementById('main'),document.getElementById('bloody-shape'))
+  coordinateFinder([(595/1400),(144/788),(650/1400),(172/788)],document.getElementById('main'),document.getElementById('hydro-shape'))
 
 
-function hydroFunction(){
-  let leaves = document.getElementById('leaves')
-  leaves.style.display = 'block'
 }
 let puzzleData = [  
   {
@@ -186,7 +153,7 @@ let puzzleData = [
     scaling: [1422, 800, 1422, 800],
     areaid: 'smiley-shape',
     areaCoords: [676, 341, 717, 448],
-  },
+  }, 
   {
     startPage: "/leftSideView2.jpg",
     puzzlePage: "./camerafiles/microScopeCloseUp.jpg",
@@ -203,32 +170,135 @@ let puzzleData = [
     areaCoords: [676, 341, 717, 448],},
 
 ]
+function goehringButton(puzzle){
+  let main = document.getElementById('main');
+  data = _.find(puzzleData, d => main.src.includes(d.startPage))
+  previousPage = main.src
+
+  if(puzzle =='hydro'){
+    data = _.find(puzzleData, d => "hydro"==d.puzzle)
+    main.src = data.puzzlePage
+    data.func()
+  }
+  else{
+    main.src = data.puzzlePage
+    data.func()
+  }
+  
+ 
+  
+}
+function punnetFunction(){
+  let punny = document.getElementById("punneter")
+  punny.style.display="block"
+  let main = document.getElementById('main'),
+  left = (747/1422)*main.clientWidth,
+  top = (401/800)*main.clientHeight,
+  width= (114/1422)*main.clientWidth,
+  height = (1/8) * main.clientHeight
+  punny.style.left = `${left}`
+  punny.style.top = `${top}`
+  punny.style.width = `${width}`
+  punny.style.height = `${height}`
+
+}
+
+
+function hydroFunction(){
+let leaves = document.getElementById('leaves')
+leaves.style.display = 'block'
+}
+
 function bloodFunction(){
-  let dna = document.getElementById('names')
-  dna.style.display="block"
+let dna = document.getElementById('names')
+dna.style.display="block"
 }
-function coordinateFinder(coordinates, image, affectee){
-  let height = image.clientHeight, width = image.clientWidth,
-  final = [width, height, width,height]
-                      .map((v,i) => v*coordinates[i])
-  affectee.coords = final.join(",")
-}
-function setCoordinates() {
-  //let areas = document.querySelectorAll("area")
-  //areas.forEach(a => a.onclick = )
-  coordinateFinder([(676/1422),(341/800),(717/1422),(448/800)],document.getElementById('main'),document.getElementById('microscope-shape'))
-  coordinateFinder([(757/1422),(431/800),(860/1422),(531/800)],document.getElementById('main'),document.getElementById('punnet-shape'))
-  coordinateFinder([(440/1422),(187/800),(493/1422),(234/800)],document.getElementById('main'),document.getElementById('smiley-shape'))
-  coordinateFinder([(659/1422),(364/800),(710/1422),(396/800)],document.getElementById('main'),document.getElementById('bloody-shape'))
-  coordinateFinder([(595/1400),(144/788),(650/1400),(172/788)],document.getElementById('main'),document.getElementById('hydro-shape'))
 
 
+function microscopeFunction(){
+  //debugger
+  let video = document.getElementById('video')
+  video.style.display="block"
+  let input = document.getElementById('input2')
+  input.style.display = "block"
+  input.innerHTML = "<input id='hidden-box'></input><button onclick='checkAnswer(\"celebration\",celeCorrect,celeWrong,\"hidden-box\")'>SUBMIT ANSWER LOWERCASE PLEASE</button>"
+  let disp = document.getElementById("disp")
+  disp.style.display = "none"
 }
+
+
 function prev(){
   main = document.getElementById('main')
   main.src=previousPage
   boxes = document.getElementsByClassName('blank')
   Array.from(boxes).forEach(b=>b.style.display="none")
+}
+
+function microCorrect(){
+  statement = document.getElementById('statement')
+  statement.innerHTML="Congratulations, Now Figure Out What That Means"
+}
+function microWrong(){
+    statement = document.getElementById('statement')
+    text = statement.innerHTML
+    statement.innerHTML=`<label for="anainp"> You Messed Up = </label><input name="anainp" id='inputter'></input><button onclick="checkAnswer('microscope',microCorrect,microWrong,inputter)SUBMIT ANSWER</button>`
+    interval = 10
+    setTimeout(function(){
+      startShuffle(chosen);;
+  }, 2000); 
+
+}
+function celeCorrect(){
+  statement = document.getElementById('input2')
+  statement.style.color="white"
+  statement.style.fontSize="30px"
+  statement.innerHTML="<input id='hidden-box'></input><button onclick='checkAnswer(\"celebration\",finalish,finalish,\"hidden-box\")'>SUBMIT ANSWER LOWERCASE PLEASE</button>"
+  sta = document.getElementById('higher')
+  sta.style.display ="block"
+  video.style.display="none"
+
+
+}
+function reappear(){
+  let input = document.getElementById('input2')
+  input.innerHTML = "<input id='hidden-box'></input><button onclick='checkAnswer(\"celebration\",finalish,finalish,\"hidden-box\")'>SUBMIT ANSWER LOWERCASE PLEASE</button>"
+}
+function reappear2(){
+  let input = document.getElementById('input2')
+  input.style.display = "block"
+}
+function celeWrong(){
+  let input = document.getElementById('input2')
+  input.innerHTML="Sorry Try Again"
+  input.style.color="white"
+  input.style.bottom="0"
+  input.style.fontSize="30px"
+  
+input.style.bottom="-2%"
+}
+function finalish(){
+  sta = document.getElementById('higher')
+  sta.style.display = "none"
+  input2 = document.getElementById('input2')
+  input2.display = "none"
+  video = document.getElementById('video')
+  video.src = "videos/v2.MP4"
+  video.style.display = "block"
+  input2.innerHTML = "<button>CONGRATS, MOVE ON</button>"
+  setTimeout(function(){
+    reappear2();;
+}, 2000); 
+}
+function checkAnswer(rightAnswer,nextFunction,nextFailure,from){
+
+  //statement = document.getElementById('statement')
+  answer = document.getElementById(from)
+  if (answer.value == rightAnswer){
+    nextFunction()
+  }  
+  else{
+    nextFailure()
+  }  
 }
 let chosen=""
 function anagram(text){
@@ -245,31 +315,6 @@ function anagram(text){
 
 
 }
-function microCorrect(){
-  statement = document.getElementById('statement')
-  statement.innerHTML="Congratulations, Now Figure Out What That Means"
-}
-function microWrong(){
-    statement = document.getElementById('statement')
-    text = statement.innerHTML
-    statement.innerHTML=`<label for="anainp"> You Messed Up = </label><input name="anainp" id='inputter'></input><button onclick="checkAnswer('microscope',microCorrect,microWrong,inputter)SUBMIT ANSWER</button>`
-    interval = 10
-    setTimeout(function(){
-      startShuffle(chosen);;
-  }, 2000); 
-
-}
-function checkAnswer(checker,nextFunction,nextFailure,from){
-
-  statement = document.getElementById('statement')
-  answer = document.getElementById(from)
-  if (answer.value == checker){
-    nextFunction()
-  }  
-  else{
-    nextFailure()
-  }  
-  }
 function startShuffle(text) {
   let shuffleCount = 10
   let intervalId = setInterval(
