@@ -83,6 +83,33 @@ function imageChanger (url) {
   prev()
   main.src = url
 }
+function microscopeFunction(){
+  //debugger
+  let video = document.getElementById('video')
+  video.style.display="block"
+  let input = document.getElementById('input2')
+  input.style.display = "block"
+  input.innerHTML = "<input id='hidden-box'></input><button onclick='checkAnswer(\"celebration\",celeCorrect,celeWrong,\"hidden-box\")'>SUBMIT ANSWER LOWERCASE PLEASE</button>"
+  let disp = document.getElementById("disp")
+  disp.style.display = "none"
+}
+function celeCorrect(){
+  statement = document.getElementById('input2')
+  statement.style.color="white"
+  statement.style.fontSize="30px"
+  statement.innerHTML="<input id='hidden-box'></input><button onclick='checkAnswer(\"celebration\",celeCorrect,celeWrong,\"hidden-box\")'>SUBMIT ANSWER LOWERCASE PLEASE</button>"
+  video.src="./videos/v2.mp4"
+  alert(statement.innerHTML)
+}
+function celeWrong(){
+  let input = document.getElementById('input2')
+  input.style.fontSize="30px"
+  input.innerHTMl = "Bye"
+}
+function punnetFunction(){
+    punny = document.getElementById("punneter")
+    punny.style.display="block"
+}
 function goehringButton(puzzle){
   let main = document.getElementById('main');
   data = _.find(puzzleData, d => main.src.includes(d.startPage))
@@ -101,11 +128,26 @@ function goehringButton(puzzle){
  
   
 }
+
+
 function hydroFunction(){
   let leaves = document.getElementById('leaves')
   leaves.style.display = 'block'
 }
 let puzzleData = [  
+  {
+    startPage: "/WindowView4.jpg",
+    puzzlePage: "./camerafiles/bloodyCloseUp.jpg",
+
+    puzzle: 'blood',
+    page: 'Goehring',
+    func:bloodFunction,
+    imageid: 'main',
+    imageHeight: 800,
+    imageWidth: 1422,
+    scaling: [1422, 800, 1422, 800],
+    areaid: 'microscope-shape',
+    areaCoords: [676, 341, 717, 448],},
   {
     startPage: "/rightSideView1.jpg",
     puzzlePage: "./camerafiles/travelingLight.jpg",
@@ -120,7 +162,20 @@ let puzzleData = [
     areaCoords: [676, 341, 717, 448],
   },
   {
-    startPage: "/leftSideView2.jpg",
+    startPage: "/frontView3.jpg",
+    puzzlePage: "./images/frontView3.jpg",
+    func:punnetFunction,
+    puzzle: 'punnet',
+    page: 'Goehring',
+    imageid: 'main',
+    imageHeight: 800,
+    imageWidth: 1422,
+    scaling: [1422, 800, 1422, 800],
+    areaid: 'smiley-shape',
+    areaCoords: [676, 341, 717, 448],
+  },
+  {
+    startPage: "/WindowView4.jpg",
     puzzlePage: "./camerafiles/hydroponicCloseup2.jpg",
     func:hydroFunction,
     puzzle: 'hydro',
@@ -141,23 +196,12 @@ let puzzleData = [
     page: 'Goehring',
     imageid: 'main',
     imageHeight: 800,
+    func:microscopeFunction,
     imageWidth: 1422,
     scaling: [1422, 800, 1422, 800],
     areaid: 'microscope-shape',
     areaCoords: [676, 341, 717, 448],},
-    {
-      startPage: "/WindowView4.jpg",
-      puzzlePage: "./camerafiles/bloodyCloseUp.jpg",
-  
-      puzzle: 'blood',
-      page: 'Goehring',
-      func:bloodFunction,
-      imageid: 'main',
-      imageHeight: 800,
-      imageWidth: 1422,
-      scaling: [1422, 800, 1422, 800],
-      areaid: 'microscope-shape',
-      areaCoords: [676, 341, 717, 448],},
+
 ]
 function bloodFunction(){
   let dna = document.getElementById('names')
@@ -173,6 +217,7 @@ function setCoordinates() {
   //let areas = document.querySelectorAll("area")
   //areas.forEach(a => a.onclick = )
   coordinateFinder([(676/1422),(341/800),(717/1422),(448/800)],document.getElementById('main'),document.getElementById('microscope-shape'))
+  coordinateFinder([(757/1422),(431/800),(860/1422),(531/800)],document.getElementById('main'),document.getElementById('punnet-shape'))
   coordinateFinder([(440/1422),(187/800),(493/1422),(234/800)],document.getElementById('main'),document.getElementById('smiley-shape'))
   coordinateFinder([(659/1422),(364/800),(710/1422),(396/800)],document.getElementById('main'),document.getElementById('bloody-shape'))
   coordinateFinder([(595/1400),(144/788),(650/1400),(172/788)],document.getElementById('main'),document.getElementById('hydro-shape'))
@@ -200,22 +245,29 @@ function anagram(text){
 
 
 }
-
-function checkAnswer(){
-  //debugger
+function microCorrect(){
   statement = document.getElementById('statement')
-  answer = document.getElementById('inputter')
-  if (answer.value == "microscope"){
-    statement.innerHTML="Congratulations, Now Figure Out What That Means"
-  }  
-  else{
+  statement.innerHTML="Congratulations, Now Figure Out What That Means"
+}
+function microWrong(){
+    statement = document.getElementById('statement')
     text = statement.innerHTML
-    statement.innerHTML=`<label for="anainp"> You Messed Up = </label><input name="anainp" id='inputter'></input><button onclick="checkAnswer()">SUBMIT ANSWER</button>`
+    statement.innerHTML=`<label for="anainp"> You Messed Up = </label><input name="anainp" id='inputter'></input><button onclick="checkAnswer('microscope',microCorrect,microWrong,inputter)SUBMIT ANSWER</button>`
     interval = 10
     setTimeout(function(){
       startShuffle(chosen);;
   }, 2000); 
 
+}
+function checkAnswer(checker,nextFunction,nextFailure,from){
+
+  statement = document.getElementById('statement')
+  answer = document.getElementById(from)
+  if (answer.value == checker){
+    nextFunction()
+  }  
+  else{
+    nextFailure()
   }  
   }
 function startShuffle(text) {
@@ -227,7 +279,7 @@ function startShuffle(text) {
       newPhrase = newPhrase.join('')
       statement.innerHTML = 
       `<label for="anainp">${newPhrase} = </label>
-      <input name="anainp" id='inputter'></input><button onclick="checkAnswer()">SUBMIT ANSWER</button>`
+      <input name="anainp" id='inputter'></input><button onclick="checkAnswer('microscope',microCorrect,microWrong,'inputter')">SUBMIT ANSWER</button>`
       
       shuffleCount = shuffleCount - 1
       if (shuffleCount <= 0){
