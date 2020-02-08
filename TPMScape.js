@@ -50,6 +50,7 @@ function checkHint(name){
 // Set the date we're counting down to
 let countDownDate = Date.now() + 600000
 
+
 // Update the count down every 1 second
 let x = setInterval(function() {
 
@@ -73,9 +74,8 @@ let x = setInterval(function() {
   }
   // If the count down is over, write some text 
   if (timeLeft < 0) {
-    clearInterval(x);
-    demo = document.getElementById("demo")
-    demo && (demo.innerHTML = "expired")
+    window.location.href = "lose.html";
+
   }
 }, 1000);
 
@@ -268,13 +268,17 @@ function reappear2(){
   input.style.display = "block"
 }
 function celeWrong(){
+  
   let input = document.getElementById('input2')
   input.innerHTML="Sorry Try Again"
   input.style.color="white"
   input.style.bottom="0"
   input.style.fontSize="30px"
-  
-input.style.bottom="-2%"
+  input.style.bottom="-2%"
+  setTimeout(function(){
+    reappear();;
+}, 2000); 
+
 }
 function finalish(){
   sta = document.getElementById('higher')
@@ -284,14 +288,13 @@ function finalish(){
   video = document.getElementById('video')
   video.src = "videos/v2.MP4"
   video.style.display = "block"
-  input2.innerHTML = "<button>CONGRATS, MOVE ON</button>"
+  input2.innerHTML = "<button onclick='moveOn()'>CONGRATS, MOVE ON</button>"
   setTimeout(function(){
     reappear2();;
 }, 2000); 
 }
 function checkAnswer(rightAnswer,nextFunction,nextFailure,from){
-
-  //statement = document.getElementById('statement')
+  statement = document.getElementById('statement')
   answer = document.getElementById(from)
   if (answer.value == rightAnswer){
     nextFunction()
@@ -299,6 +302,27 @@ function checkAnswer(rightAnswer,nextFunction,nextFailure,from){
   else{
     nextFailure()
   }  
+}
+function establishTime(){
+  localStorage.setItem("time", 0)
+
+}
+function moveOn(){
+  debugger
+  let time = localStorage.getItem("time")
+  if (!time){
+    time = establishTime()
+  }
+  if(time == 0){
+    window.location.href = "secondHome.html";
+    localStorage.setItem("time", 1)
+  }
+  else{
+    window.location.href = "victory.html"
+    localStorage.setItem("time", 0)
+  }
+  
+
 }
 let chosen=""
 function anagram(text){
