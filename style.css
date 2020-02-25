@@ -7,6 +7,13 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
 }
+
+.victoryBody{
+    background-image: url('./images/fireworks.gif');
+    background-color: rgb(51, 50, 50);
+    background-size: cover;
+}
+
 .heading{
     width:700px;
     height:85%;
