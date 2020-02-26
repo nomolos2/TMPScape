@@ -14,6 +14,17 @@
     background-size: cover;
 }
 
+.loserBody{
+    background-image: url('./images/rain.gif');
+    background-color: rgb(51, 50, 50);
+    background-size: cover;
+}
+
+.errorBody{
+    background-color: rgb(51, 50, 50);
+    background-size: cover;
+}
+
 .heading{
     width:700px;
     height:85%;
@@ -320,4 +331,26 @@
     color:white;
     font-size:10vh;   
     display:none;
+}
+.secondHome{
+    position: center;
+    display:block;
+    width:180px;
+    height:50px;
+    border:3px solid white;
+    background-color:rgba(255,255,255,0);
+    color:white;
+    font-family:sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 5px;
+    transition: background-color 1000ms, color 1000ms;
+}
+.secondHome:hover{
+    background-color: rgba(255,255,255,1);
+    color:#222;
+    cursor:pointer;
+}
+.link{
+    text-decoration: none;
 }
