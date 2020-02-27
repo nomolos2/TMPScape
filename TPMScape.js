@@ -221,7 +221,7 @@ function microscopeFunction(){
   video.style.display="block"
   let input = document.getElementById('input2')
   input.style.display = "block"
-  input.innerHTML = "<input id='hidden-box'></input><button onclick='checkAnswer(\"celebration\",celeCorrect,celeWrong,\"hidden-box\")'>SUBMIT ANSWER LOWERCASE PLEASE</button>"
+  input.innerHTML = "<input onchange='lowercaser(\"hidden-box\")' id='hidden-box'></input><button onclick='checkAnswer(\"celebration\",celeCorrect,celeWrong,\"hidden-box\")'>SUBMIT ANSWER LOWERCASE PLEASE</button>"
   let disp = document.getElementById("disp")
   disp.style.display = "none"
 }
@@ -252,7 +252,7 @@ function celeCorrect(){
   statement = document.getElementById('input2')
   statement.style.color="white"
   statement.style.fontSize="30px"
-  statement.innerHTML="<input id='hidden-box'></input><button onclick='checkAnswer(\"celebration\",finalish,finalish,\"hidden-box\")'>SUBMIT ANSWER LOWERCASE PLEASE</button>"
+  statement.innerHTML="<input  onchange='lowercaser(\"hidden-box\")' id='hidden-box'></input><button onclick='checkAnswer(\"celebration\",finalish,finalish,\"hidden-box\")'>SUBMIT ANSWER LOWERCASE PLEASE</button>"
   sta = document.getElementById('higher')
   sta.style.display ="block"
   video.style.display="none"
@@ -261,7 +261,7 @@ function celeCorrect(){
 }
 function reappear(){
   let input = document.getElementById('input2')
-  input.innerHTML = "<input id='hidden-box'></input><button onclick='checkAnswer(\"celebration\",finalish,finalish,\"hidden-box\")'>SUBMIT ANSWER LOWERCASE PLEASE</button>"
+  input.innerHTML = "<input id='hidden-box'></input><button onclick='checkAnswer(\"celebration\",celeCorrect, celeWrong,\"hidden-box\")'>SUBMIT ANSWER LOWERCASE PLEASE</button>"
 }
 function reappear2(){
   let input = document.getElementById('input2')
@@ -283,12 +283,18 @@ function celeWrong(){
 function finalish(){
   sta = document.getElementById('higher')
   sta.style.display = "none"
-  input2 = document.getElementById('input2')
-  input2.display = "none"
+  
+
   video = document.getElementById('video')
   video.src = "videos/v2.MP4"
   video.style.display = "block"
+  
+  video.onended = evt => { debugger
+    folder = document.querySelector('#folder')
+    folder.style.display="block"
+    input2 = document.getElementById('input2')
   input2.innerHTML = "<button onclick='moveOn()'>CONGRATS, MOVE ON</button>"
+  }
   setTimeout(function(){
     reappear2();;
 }, 2000); 
@@ -334,7 +340,7 @@ function anagram(text){
   statement = document.getElementById('statement')
   statement.innerHTML = 
   `<label for="anainp">${text} = </label>
-  <input name="anainp" class='inputter'></input><button>SUMBIT ANSWER</button>`
+  <input name="anainp" onchange="lowercaser('inputter') id='inputter'></input><button>SUMBIT ANSWER</button>`
   startShuffle(text)
 
 
@@ -348,7 +354,7 @@ function startShuffle(text) {
       newPhrase = newPhrase.join('')
       statement.innerHTML = 
       `<label for="anainp">${newPhrase} = </label>
-      <input name="anainp" id='inputter'></input><button onclick="checkAnswer('microscope',microCorrect,microWrong,'inputter')">SUBMIT ANSWER</button>`
+      <input onchange="lowercaser('inputter') name="anainp" id='inputter'></input><button onclick="checkAnswer('microscope',microCorrect,microWrong,'inputter')">SUBMIT ANSWER</button>`
       
       shuffleCount = shuffleCount - 1
       if (shuffleCount <= 0){
@@ -356,8 +362,14 @@ function startShuffle(text) {
       }
     }, 300)
 }
+function lowercaser(iden){
+  debugger
+  text = document.querySelector(`#${iden}`)
+  text.value = text.value.toLowerCase()
+}
 document.body.onload = setCoordinates
 document.body.onresize = setCoordinates
+
 
   /*
 let origHeight = 800, origWidth = 1422,
