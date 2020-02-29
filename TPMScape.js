@@ -6,7 +6,7 @@ function playPause() {
   if (myVideo.paused){
     myVideo.play();
     document.getElementById("audioImg").src="images/volume2.png";
-  }
+    }
   else
   { myVideo.pause();
    document.getElementById("audioImg").src="images/mute2.png";
@@ -27,19 +27,30 @@ function getHint() {
 
   hints = hints.split(/\|/)
   hints = _.shuffle(hints)
-  hint = hints.pop()
+  localStorage.setItem("hint", `${hints.pop()}`)
   localStorage.setItem("hints", hints.join('|'))
-  window.curHint = hint
-  return(hint)
+  window.curHint = localStorage.getItem("hint")
+  return(localStorage.getItem("hint"))
 }
 
 function chooseHint(){
   let hint = getHint()
-  alert(`hi ${hint}`)
+  alert(hint)
+
+  video = document.querySelector('#video')
+  video.src = `./videos/${hint}.MP4`
+  video.requestFullscreen()
+  video.style.display = "block"
+  video.onended = evt => {
+    video = document.querySelector('#video')
+    video.webkitExitFullscreen()
+    video.style.display = "none"
+
+  }
 }
 
 function checkHint(name){
-  if (curHint == name){
+  if (localStorage.getItem('hint') == name){
     window.location.href = `${name}Page.html`;
   }
   else{
@@ -216,12 +227,12 @@ dna.style.display="block"
 
 
 function microscopeFunction(){
-  //debugger
+
   let video = document.getElementById('video')
   video.style.display="block"
   let input = document.getElementById('input2')
   input.style.display = "block"
-  input.innerHTML = "<input onchange='lowercaser(\"hidden-box\")' id='hidden-box'></input><button onclick='checkAnswer(\"celebration\",celeCorrect,celeWrong,\"hidden-box\")'>SUBMIT ANSWER LOWERCASE PLEASE</button>"
+  input.innerHTML = "<input onchange='lowercaser(\"hidden-box\")' id='hidden-box'></input><button onclick='checkAnswer(\"extravaganza\",celeCorrect,celeWrong,\"hidden-box\")'>SUBMIT ANSWER LOWERCASE PLEASE</button>"
   let disp = document.getElementById("disp")
   disp.style.display = "none"
 }
@@ -249,6 +260,7 @@ function microWrong(){
 
 }
 function celeCorrect(){
+  
   statement = document.getElementById('input2')
   statement.style.color="white"
   statement.style.fontSize="30px"
@@ -264,7 +276,7 @@ function reappear(){
   input.innerHTML = "<input id='hidden-box'></input><button onclick='checkAnswer(\"celebration\",celeCorrect, celeWrong,\"hidden-box\")'>SUBMIT ANSWER LOWERCASE PLEASE</button>"
 }
 function reappear2(){
-  let input = document.getElementById('input2')
+  let input = document.querySelector('#input2')
   input.style.display = "block"
 }
 function celeWrong(){
@@ -281,24 +293,24 @@ function celeWrong(){
 
 }
 function finalish(){
-  sta = document.getElementById('higher')
+  //debugger
+  sta = document.querySelector('#higher')
   sta.style.display = "none"
-  
 
   video = document.getElementById('video')
-  video.src = "videos/v2.MP4"
+  video.src = "./videos/v2.MP4"
   video.style.display = "block"
-  
-  video.onended = evt => { debugger
+  input2 = document.querySelector('#input2')
+  input2.style.display = "none";
+  video.onended = evt => { 
     folder = document.querySelector('#folder')
     folder.style.display="block"
     input2 = document.getElementById('input2')
-  input2.innerHTML = "<button onclick='moveOn()'>CONGRATS, MOVE ON</button>"
+    input2.style.display ="block"
+    input2.innerHTML = "<button onclick='moveOn()'>CONGRATS, MOVE ON</button>"
   }
-  setTimeout(function(){
-    reappear2();;
-}, 2000); 
 }
+
 function checkAnswer(rightAnswer,nextFunction,nextFailure,from){
   statement = document.getElementById('statement')
   answer = document.getElementById(from)
@@ -314,7 +326,7 @@ function establishTime(){
 
 }
 function moveOn(){
-  debugger
+  
   let time = localStorage.getItem("time")
   if (!time){
     time = establishTime()
@@ -363,14 +375,17 @@ function startShuffle(text) {
     }, 300)
 }
 function lowercaser(iden){
-  debugger
+  
   text = document.querySelector(`#${iden}`)
   text.value = text.value.toLowerCase()
 }
 document.body.onload = setCoordinates
 document.body.onresize = setCoordinates
 
-
+function makeNew(){
+  establishHints()
+  establishTime()
+}
   /*
 let origHeight = 800, origWidth = 1422,
     scaling = [origWidth, origHeight, origWidth, origHeight],
