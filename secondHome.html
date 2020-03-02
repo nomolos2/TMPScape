@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>TPMScape</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <script type="text/javascript" src="TPMScape.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+
+  </head>
+
+  <body class="indexBody">
+    <center>
+            
+          <div style="visibility:hidden">
+              <audio loop id="sound1">
+                <source src="y2mate.com - his_dark_materials_main_theme_extended_wGX3XZtydJU_320kbps.mp3">
+              </audio>
+               </div>
+           <audio id="player" src="y2mate.com - his_dark_materials_main_theme_extended_wGX3XZtydJU_320kbps.mp3" loop ></audio>
+            <div>
+             <button onclick="playPause()" class="audio" >
+               <img  id="audioImg" src="./images/mute2.png" width="50px"/>
+             </button>
+          </div>
+          <button class="restart" onclick="makeNew()">RESTART</button>
+          
+
+    </center>
+    <video  id="video" class="blank" controls>
+      <source class="widther"src="./videos/v1.MP4" type="video/mp4">
+  
+Your browser does not support the video tag.
+  </video>
+    <br><br><br><br><br>
+    <button onclick="chooseHint()" class="hint">
+      HINT
+    </button>
+    
+    <center>
+      <img class="secondfloor" src="./images/floormap2.png"/ usemap="#floor2">
+    </center>
+    
+    <map name="floor2">
+      <area shape="rect" coords="36,211,115,268" alt="Goehring" onclick="checkHint('Goehring')">
+      <area shape="rect" coords="182,169,233,217" alt="Taliff" onclick="checkHint('Taliff')">
+    </map>
+  </body>
+</html>
