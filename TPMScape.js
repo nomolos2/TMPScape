@@ -22,7 +22,8 @@ function getHint() {
   let hints = localStorage.getItem('hints')
 
   if (!hints || !hints.length) {
-    hints = establishHints()
+    establishHints()
+    hints = localStorage.getItem('hints')
   }
 
   hints = hints.split(/\|/)
@@ -35,17 +36,16 @@ function getHint() {
 
 function chooseHint(){
   let hint = getHint()
-  alert(hint)
 
   video = document.querySelector('#video')
-  video.src = `./videos/${hint}.MP4`
+  
+  video.src = `./videos/${hint}.mp4`
   video.requestFullscreen()
   video.style.display = "block"
   video.onended = evt => {
     video = document.querySelector('#video')
-    video.webkitExitFullscreen()
+    video.webkitExitFullScreen()
     video.style.display = "none"
-
   }
 }
 
@@ -264,7 +264,7 @@ function celeCorrect(){
   statement = document.getElementById('input2')
   statement.style.color="white"
   statement.style.fontSize="30px"
-  statement.innerHTML="<input  onchange='lowercaser(\"hidden-box\")' id='hidden-box'></input><button onclick='checkAnswer(\"celebration\",finalish,finalish,\"hidden-box\")'>SUBMIT ANSWER LOWERCASE PLEASE</button>"
+  statement.innerHTML="<input  onchange='lowercaser(\"hidden-box\")' id='hidden-box'></input><button onclick='checkAnswer(\"extravaganza\",finalish,finalish,\"hidden-box\")'>SUBMIT ANSWER LOWERCASE PLEASE</button>"
   sta = document.getElementById('higher')
   sta.style.display ="block"
   video.style.display="none"
@@ -273,7 +273,7 @@ function celeCorrect(){
 }
 function reappear(){
   let input = document.getElementById('input2')
-  input.innerHTML = "<input id='hidden-box'></input><button onclick='checkAnswer(\"celebration\",celeCorrect, celeWrong,\"hidden-box\")'>SUBMIT ANSWER LOWERCASE PLEASE</button>"
+  input.innerHTML = "<input id='hidden-box'></input><button onclick='checkAnswer(\"extravaganza\",celeCorrect, celeWrong,\"hidden-box\")'>SUBMIT ANSWER LOWERCASE PLEASE</button>"
 }
 function reappear2(){
   let input = document.querySelector('#input2')
@@ -379,8 +379,11 @@ function lowercaser(iden){
   text = document.querySelector(`#${iden}`)
   text.value = text.value.toLowerCase()
 }
-document.body.onload = setCoordinates
-document.body.onresize = setCoordinates
+
+if (document.location.pathname === "/GoehringPage.html") {
+  document.body.onload = setCoordinates
+  document.body.onresize = setCoordinates  
+}
 
 function makeNew(){
   establishHints()
