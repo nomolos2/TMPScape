@@ -381,7 +381,7 @@ function lowercaser(iden){
   text.value = text.value.toLowerCase()
 }
 
-if (document.location.pathname === "/GoehringPage.html") {
+if (document.location.pathname.includes("/GoehringPage.html")) {
   document.body.onload = setCoordinates
   document.body.onresize = setCoordinates  
 }
