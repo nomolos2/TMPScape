@@ -327,7 +327,7 @@ function establishTime(){
 
 }
 function moveOn(){
-  
+
   let time = localStorage.getItem("time")
   if (!time){
     time = establishTime()
