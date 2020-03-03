@@ -81,7 +81,8 @@ let x = setInterval(function() {
     demo && (demo.innerHTML = `${minutes}:${seconds}`)
   }
   else{
-    document.getElementById("demo").innerHTML = `${minutes}:0${seconds}`
+    demo = document.getElementById("demo")
+    demo && (document.getElementById("demo").innerHTML = `${minutes}:0${seconds}`)
   }
   // If the count down is over, write some text 
   if (timeLeft < 0) {
