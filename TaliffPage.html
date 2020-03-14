@@ -1,19 +1,14 @@
-  
 <html>
     <head>
-    <script type="text/javascript" src="TPMScape.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
     <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="stylesheet" href="taliff.css" type="text/css">
 
-    <script>
-        function imageChanger(){
-            document.getElementbyId('front').style.background-image = url("./images/frontTaliff.jpg");
-        }
-    </script>
     </head>
     
    <body class="taliffBody">
+        <map name="zoom">
+                <area id="comp-shape" shape="rect" alt="Zoom" onclick="errorButton()" >
+        </map>
         <image src="./images/mute2.jpg" class="img-main" id='main'/>
        <button  onclick =  "imageChanger('./images/frontTaliff.jpg')">
         <img  class="imageOne" id="front" src="./images/frontTaliff.jpg" width="85px"/>
@@ -30,4 +25,6 @@
          <button class="label"onclick="moveOn()">Move On</button>
    <p id="demo" class="timer"></p>
    </body>
+   <script type="text/javascript" src="TPMScape.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
    </html>

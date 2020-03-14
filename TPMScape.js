@@ -100,6 +100,8 @@ function coordinateFinder(coordinates, image, affectee){
   let height = image.clientHeight, width = image.clientWidth,
   final = [width, height, width,height]
                       .map((v,i) => v*coordinates[i])
+  alert(affectee)
+  alert(document.getElementById("comp-shape").shape)
   affectee.coords = final.join(",")
 }
 function setCoordinates() {
@@ -110,7 +112,6 @@ function setCoordinates() {
   coordinateFinder([(440/1422),(187/800),(493/1422),(234/800)],document.getElementById('main'),document.getElementById('smiley-shape'))
   coordinateFinder([(659/1422),(364/800),(710/1422),(396/800)],document.getElementById('main'),document.getElementById('bloody-shape'))
   coordinateFinder([(595/1400),(144/788),(650/1400),(172/788)],document.getElementById('main'),document.getElementById('hydro-shape'))
-
 
 }
 let puzzleData = [  
@@ -180,6 +181,20 @@ let puzzleData = [
     scaling: [1422, 800, 1422, 800],
     areaid: 'microscope-shape',
     areaCoords: [676, 341, 717, 448],},
+  /*{
+    startPage: "/backTaliff.png",
+    puzzlePage: "./images/findTheErrors.png",
+  
+    puzzle: 'errors',
+  
+    page: 'Taliff',
+    imageid: 'main',
+    imageHeight: 778,
+    func:errorFunction,
+    imageWidth: 1307,
+    scaling: [1307, 778, 1307, 778],
+    areaid: 'comp-shape',
+    areaCoords: [301, 286, 344, 317],},*/
 
 ]
 function goehringButton(puzzle){
@@ -386,6 +401,11 @@ if (document.location.pathname.includes("/GoehringPage.html")) {
   document.body.onresize = setCoordinates  
 }
 
+if (document.location.pathname.includes("/TaliffPage.html")){
+  document.body.onload = setCoordinates
+  document.body.onresize = setCoordinates
+}
+
 function makeNew(){
   establishHints()
   establishTime()
@@ -419,3 +439,25 @@ class Foo {
   }
 }
 */
+
+/*
+document.body.addEventListener('mousedown',e => console.log(e.x,e.y)) ==> click on coordinates
+outerHeight
+outerWidth ==> width and height of window.
+
+*/
+
+
+
+function setCoordinatesT(){
+  debugger
+  var comp = document.getElementById("comp-shape")
+  alert(comp)
+  coordinateFinder([(301/1307),(286/778),(344/1307),(317/778)],document.getElementById('main'),comp)
+}
+
+function errorButton(){
+  alert("Hello")
+}
+
+
