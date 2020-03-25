@@ -7,19 +7,19 @@
     
    <body class="taliffBody">
         <map name="zoom">
-                <area id="comp-shape" shape="rect" alt="Zoom" onclick="errorButton()" >
+                <area id="comp-shape" class="stoopid" shape="rect" alt="Zoom" onclick="errorButton()" >
         </map>
-        <image src="./images/mute2.jpg" class="img-main" id='main'/>
+        <image src="./images/backTaliff.png" class="img-main" id='main'/>
        <button  onclick =  "imageChanger('./images/frontTaliff.jpg')">
         <img  class="imageOne" id="front" src="./images/frontTaliff.jpg" width="85px"/>
         </button>
        <button  onclick =  "imageChanger('./images/RighsideTaliff.png')">
                <img  class="imageTwo" id="right" src="./images/RighsideTaliff.png" width="85px"/>
        </button>
-       <button  onclick =  "imageChanger('images/backTaliff.png')">
-           <img class="imageThree" id="back" src="images/backTaliff.png" width="85px"/>
+       <button  onclick =  "imageChanger('./images/backTaliff.png')">
+           <img class="imageThree" id="back" src="./images/backTaliff.png" width="85px"/>
         </button>
-        <button  onclick =  "imageChanger('images/leftsideTaliff.jpg')">
+        <button  onclick =  "imageChanger('./images/leftsideTaliff.jpg')">
             <img class="imageFour" id="left" src="images/leftsideTaliff.jpg" width="85px"/>
          </button>
          <button class="label"onclick="moveOn()">Move On</button>

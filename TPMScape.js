@@ -96,12 +96,11 @@ function imageChanger (url) {
   prev()
   main.src = url
 }
-function coordinateFinder(coordinates, image, affectee){
+function coordinateFinder(coordinates, image, affectee)
+{
   let height = image.clientHeight, width = image.clientWidth,
-  final = [width, height, width,height]
+  final = [width, height, width, height]
                       .map((v,i) => v*coordinates[i])
-  alert(affectee)
-  alert(document.getElementById("comp-shape").shape)
   affectee.coords = final.join(",")
 }
 function setCoordinates() {
@@ -197,7 +196,9 @@ let puzzleData = [
     areaCoords: [301, 286, 344, 317],},*/
 
 ]
+
 function goehringButton(puzzle){
+  debugger
   let main = document.getElementById('main');
   data = _.find(puzzleData, d => main.src.includes(d.startPage))
   previousPage = main.src
@@ -373,7 +374,7 @@ function anagram(text){
 
 
 }
-function startShuffle(text) {
+function startShuffle(text){
   let shuffleCount = 10
   let intervalId = setInterval(
     function (){
@@ -396,15 +397,16 @@ function lowercaser(iden){
   text.value = text.value.toLowerCase()
 }
 
-if (document.location.pathname.includes("/GoehringPage.html")) {
+if (document.location.pathname.includes("/GoehringPage.html")){
   document.body.onload = setCoordinates
-  document.body.onresize = setCoordinates  
+  //document.body.onresize = setCoordinates  
 }
 
 if (document.location.pathname.includes("/TaliffPage.html")){
-  document.body.onload = setCoordinates
-  document.body.onresize = setCoordinates
+  document.body.onload = setCoordinatesT
+  document.body.onresize = setCoordinatesT
 }
+
 
 function makeNew(){
   establishHints()
@@ -450,14 +452,14 @@ outerWidth ==> width and height of window.
 
 
 function setCoordinatesT(){
-  debugger
   var comp = document.getElementById("comp-shape")
-  alert(comp)
-  coordinateFinder([(301/1307),(286/778),(344/1307),(317/778)],document.getElementById('main'),comp)
+  coordinateFinder([(304/752),(287/699),(242/752),(317/699)],document.getElementById('main'),comp)
 }
 
 function errorButton(){
-  alert("Hello")
+  puzzlePageT = "./images/findTheErrors.jpg"
+  main.src = puzzlePageT
 }
+
 
 
