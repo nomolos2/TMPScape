@@ -1,16 +1,11 @@
 <html>
     <head>
     <link rel="stylesheet" href="style.css" type="text/css">
-    <link rel="stylesheet" href="taliff.css" type="text/css">
 
     </head>
     
    <body class="taliffBody">
-        <map name="zoom">
-                <area id="comp-shape" class="stoopid" shape="rect" alt="Zoom" onclick="taliffFunction('error')" >
-                <area id="blue-shape" class="stoopid2" shape="rect" alt="Zoom" onclick="taliffFunction('insert')" >
-        </map>
-        <image src="./images/backTaliff.png" class="img-main" id='main'/>
+        <img src="./images/backTaliff.png" class="img-main" id='main'/>
        <button  onclick =  "imageChanger('./images/frontTaliff.jpg')">
         <img  class="imageOne" id="front" src="./images/frontTaliff.jpg" width="85px"/>
         </button>
@@ -58,7 +53,11 @@
                 </tr>
             </table>
          <button class="label"onclick="moveOn()">Move On</button>
-   <p id="demo" class="timer"></p>
+        <p id="demo" class="timer"></p>
+        <map name="zoom">
+                <area id="comp-shape" class="stoopid" shape="rect" alt="Zoom" onclick="taliffFunction('error')" >
+                <area id="blue-shape" class="stoopid2" shape="rect" alt="Zoom" onclick="taliffFunction('insert')" >
+        </map>
    </body>
    <script type="text/javascript" src="TPMScape.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
