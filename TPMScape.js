@@ -113,6 +113,7 @@ function setCoordinates() {
   coordinateFinder([(595/1400),(144/788),(650/1400),(172/788)],document.getElementById('main'),document.getElementById('hydro-shape'))
 
 }
+
 let puzzleData = [  
   {
     startPage: "/WindowView4.jpg",
@@ -399,7 +400,7 @@ function lowercaser(iden){
 
 if (document.location.pathname.includes("/GoehringPage.html")){
   document.body.onload = setCoordinates
-  //document.body.onresize = setCoordinates  
+  document.body.onresize = setCoordinates  
 }
 
 if (document.location.pathname.includes("/TaliffPage.html")){
@@ -450,16 +451,26 @@ outerWidth ==> width and height of window.
 */
 
 
-
 function setCoordinatesT(){
-  var comp = document.getElementById("comp-shape")
-  coordinateFinder([(304/752),(287/699),(242/752),(317/699)],document.getElementById('main'),comp)
+  coordinateFinder([(304/752),(287/689),(242/752),(317/689)],document.getElementById('main'),document.getElementById("comp-shape"))
+  coordinateFinder([(176/752),(312/689),(246/752),(372/689)],document.getElementById('main'),document.getElementById("blue-shape"))
 }
 
-function errorButton(){
-  puzzlePageT = "./images/findTheErrors.jpg"
-  main.src = puzzlePageT
+function taliffFunction(choice){
+  if(choice == 'error' && main.src.includes("backTaliff")){
+    puzzlePageT = "./images/findTheErrors.jpg"
+    main.src = puzzlePageT
+  }
+  if(choice == 'insert' && main.src.includes("leftsideTaliff.jpg")){
+    puzzlePageT = "./images/inputErrors.png"
+    main.src = puzzlePageT
+  }
 }
+
+function bloodFunction(){
+  let dna = document.getElementById('names')
+  dna.style.display="block"
+  }
 
 
 
