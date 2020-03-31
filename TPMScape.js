@@ -9,12 +9,13 @@ let coords_dict = {
   'hydro-shape'     : [(595/1400),(144/788),(650/1400),(172/788)],
   */
 
-  "microscope-shape": [ 0.475, 0.426, 0.504, 0.56  ],
-  "punnet-shape":     [ 0.532, 0.538, 0.604, 0.663 ],
-  "smiley-shape":     [ 0.309, 0.233, 0.346, 0.292 ],
-  "bloody-shape":     [ 0.463, 0.455, 0.499, 0.495 ],
-  "hydro-shape":      [ 0.425, 0.182, 0.464, 0.218 ],
-  "comp-shape":       [ 0.321, 0.410, 0.404, 0.453 ],
+  //"microscope-shape": [ 0.475, 0.426, 0.504, 0.56  ],
+  //"punnet-shape":     [ 0.532, 0.538, 0.604, 0.663 ],
+  //"smiley-shape":     [ 0.309, 0.233, 0.346, 0.292 ],
+  //"bloody-shape":     [ 0.463, 0.455, 0.499, 0.495 ],
+  //"hydro-shape":      [ 0.425, 0.182, 0.464, 0.218 ],
+  //"comp-shape":  [ 0.321, 0.410, 0.404, 0.453 ],
+   
   "blue-shape":       [ 0.234, 0.452, 0.327, 0.539 ],
 }
 /*
@@ -121,7 +122,8 @@ function imageChanger (url) {
   let main = document.getElementById('main');
   prev()
   main.src = url
-}
+  allowClick()
+}/*
 let puzzleData = [  
   {
     startPage: "/WindowView4.jpg",
@@ -202,12 +204,25 @@ let puzzleData = [
     imageWidth: 1307,
     scaling: [1307, 778, 1307, 778],
     areaid: 'comp-shape',
-    areaCoords: [301, 286, 344, 317],},*/
+    areaCoords: [301, 286, 344, 317],},
 
-]
-
-function goehringButton(puzzle){
-  debugger
+]*/
+pageLinks = {
+  "WindowView4.jpg":["hydro-shape","bloody-shape"],
+  "leftSideView2.jpg":["microscope-shape"],
+  "frontView3.jpg":["punnet-shape"],
+  "rightSideView1.jpg":["smiley-shape"],
+  "backTaliff.png":["comp-shape"]}
+idDic = {"hydro-shape": [hydroFunction,"./camerafiles/hydroponicCloseup2.jpg"],
+        "bloody-shape":[bloodFunction,"./camerafiles/travelingLight.jpg"],
+        "microscope-shape" :[microscopeFunction,"./camerafiles/microScopeCloseUp.jpg"],
+        "punnet-shape":[punnetFunction,"./images/frontView3.jpg"],
+        "smiley-shape": [lightFunction, "./camerafiles/travelingLight.jpg"],
+        "error-shape": [errorFunction,"./images/findTheErrors.png"],
+        "blue-shape":[insertFunction, "./images/inputErrors.png"]}
+allLinks = ["hydro-shape","bloody-shape","microscope-shape","punnet-shape","smiley-shape","comp-shape","blue-shape"]
+function goehringButtonOLD(puzzle){
+  
   let main = document.getElementById('main');
   data = _.find(puzzleData, d => main.src.includes(d.startPage))
   previousPage = main.src
@@ -222,9 +237,27 @@ function goehringButton(puzzle){
     data.func()
   }
   
- 
+
   
 }
+function clickFunc(clicked){
+  main = document.getElementById("main")
+  main.src = idDic[clicked][1]
+  idDic[clicked][0]()
+}
+function allowClick(){
+  currentPage = document.getElementById('main').src
+  section = currentPage.split("/").pop()
+  allLinks.map(id => document.getElementById(id)).filter(d => d).forEach(div => div.style.display = "none")
+  pageLinks[section].forEach(divTag => makeFront(document.getElementById(divTag)))
+}
+function makeFront(divLink){
+  divLink.style.display = "block";
+
+
+}
+
+
 function punnetFunction(){
   let punny = document.getElementById("punneter")
   punny.style.display="block"
@@ -404,12 +437,8 @@ function lowercaser(iden){
   text = document.querySelector(`#${iden}`)
   text.value = text.value.toLowerCase()
 }
-
+/*
 let shapes_to_fix = []
-if (document.location.pathname.includes("/GoehringPage.html")){
-  shapes_to_fix = ['microscope-shape','punnet-shape', 'smiley-shape', 'bloody-shape', 'hydro-shape']
-}
-
 if (document.location.pathname.includes("/TaliffPage.html")){
   shapes_to_fix = ['comp-shape']
 }
@@ -437,8 +466,10 @@ function coordinateFinder(shape) {
 }
 function setCoordinates() {
   shapes_to_fix.forEach(shape => coordinateFinder(shape))
+  allowClick()
+}
   //areas.forEach(a => a.onclick = )
-  /*
+  
   coordinateFinder([(676/1422),(341/800),(717/1422),(448/800)],document.getElementById('main'),document.getElementById('microscope-shape'))
   coordinateFinder([(757/1422),(431/800),(860/1422),(531/800)],document.getElementById('main'),document.getElementById('punnet-shape'))
   coordinateFinder([(440/1422),(187/800),(493/1422),(234/800)],document.getElementById('main'),document.getElementById('smiley-shape'))
@@ -450,7 +481,6 @@ function setCoordinates() {
   coordinateFinder([(242/752),(287/699),(304/752),(317/699)],document.getElementById('main'),comp)
   */
 
-}
 
 function makeNew(){
   establishHints()
@@ -491,7 +521,7 @@ document.body.addEventListener('mousedown',e => console.log(e.x,e.y)) ==> click 
 outerHeight
 outerWidth ==> width and height of window.
 
-*/
+
 
 
 
@@ -505,11 +535,21 @@ function taliffFunction(choice){
     main.src = puzzlePageT
   }
 }
-
+*/
+function insertFunction(){
+  //puzzlePageT = "./images/inputErrors.png"
+  //main.src = puzzlePageT
+}
+function errorFunction(){
+  //puzzlePageT = "./images/inputErrors.png"
+  //main.src = puzzlePageT
+}
 function bloodFunction(){
   let dna = document.getElementById('names')
   dna.style.display="block"
   }
-
+function lightFunction(){
+  //this is a blank function
+}
 
 
