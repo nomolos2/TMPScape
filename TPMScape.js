@@ -407,12 +407,7 @@ function lowercaser(iden){
 
 let shapes_to_fix = []
 if (document.location.pathname.includes("/GoehringPage.html")){
-<<<<<<< HEAD
-  document.body.onload = setCoordinates
-  document.body.onresize = setCoordinates  
-=======
   shapes_to_fix = ['microscope-shape','punnet-shape', 'smiley-shape', 'bloody-shape', 'hydro-shape']
->>>>>>> sigfried
 }
 
 if (document.location.pathname.includes("/TaliffPage.html")){
