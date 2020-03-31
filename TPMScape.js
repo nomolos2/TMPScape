@@ -1,4 +1,23 @@
 
+let coords_dict = {
+  /*
+  'microscope-shape': [(676/1422),(341/800),(717/1422),(448/800)],
+  'punnet-shape'    : [(757/1422),(431/800),(860/1422),(531/800)],
+  'smiley-shape'    : [(440/1422),(187/800),(493/1422),(234/800)],
+  'bloody-shape'    : [(659/1422),(364/800),(710/1422),(396/800)],
+  'comp-shape'      : [(242/752),(287/699),(304/752),(317/699)],
+  'hydro-shape'     : [(595/1400),(144/788),(650/1400),(172/788)],
+  */
+
+  "microscope-shape": [ 0.475, 0.426, 0.504, 0.56  ],
+  "punnet-shape":     [ 0.532, 0.538, 0.604, 0.663 ],
+  "smiley-shape":     [ 0.309, 0.233, 0.346, 0.292 ],
+  "bloody-shape":     [ 0.463, 0.455, 0.499, 0.495 ],
+  "hydro-shape":      [ 0.425, 0.182, 0.464, 0.218 ],
+  "comp-shape":       [ 0.321, 0.410, 0.404, 0.453 ],
+}
+
+
 let previousPage = "./camerafiles/leftSideView2.jpg"
 
 function playPause() {
@@ -95,23 +114,6 @@ function imageChanger (url) {
   let main = document.getElementById('main');
   prev()
   main.src = url
-}
-function coordinateFinder(coordinates, image, affectee)
-{
-  let height = image.clientHeight, width = image.clientWidth,
-  final = [width, height, width, height]
-                      .map((v,i) => v*coordinates[i])
-  affectee.coords = final.join(",")
-}
-function setCoordinates() {
-  //let areas = document.querySelectorAll("area")
-  //areas.forEach(a => a.onclick = )
-  coordinateFinder([(676/1422),(341/800),(717/1422),(448/800)],document.getElementById('main'),document.getElementById('microscope-shape'))
-  coordinateFinder([(757/1422),(431/800),(860/1422),(531/800)],document.getElementById('main'),document.getElementById('punnet-shape'))
-  coordinateFinder([(440/1422),(187/800),(493/1422),(234/800)],document.getElementById('main'),document.getElementById('smiley-shape'))
-  coordinateFinder([(659/1422),(364/800),(710/1422),(396/800)],document.getElementById('main'),document.getElementById('bloody-shape'))
-  coordinateFinder([(595/1400),(144/788),(650/1400),(172/788)],document.getElementById('main'),document.getElementById('hydro-shape'))
-
 }
 let puzzleData = [  
   {
@@ -392,21 +394,56 @@ function startShuffle(text){
     }, 300)
 }
 function lowercaser(iden){
-  
   text = document.querySelector(`#${iden}`)
   text.value = text.value.toLowerCase()
 }
 
+let shapes_to_fix = []
 if (document.location.pathname.includes("/GoehringPage.html")){
-  document.body.onload = setCoordinates
-  //document.body.onresize = setCoordinates  
+  shapes_to_fix = ['microscope-shape','punnet-shape', 'smiley-shape', 'bloody-shape', 'hydro-shape']
 }
 
 if (document.location.pathname.includes("/TaliffPage.html")){
-  document.body.onload = setCoordinatesT
-  document.body.onresize = setCoordinatesT
+  shapes_to_fix = ['comp-shape']
 }
 
+document.body.onload = setCoordinates
+document.body.onresize = setCoordinates  
+
+function coordinateFinderOLD(coordinates, image, affectee)
+{
+  let height = image.clientHeight, width = image.clientWidth,
+  final = [width, height, width, height]
+                      .map((v,i) => v*coordinates[i])
+  affectee.coords = final.join(",")
+}
+function coordinateFinder(shape) {
+  let el = document.getElementById(shape)
+  let image = document.getElementById('main')
+  let coordinates = coords_dict[shape]
+
+  let height = image.clientHeight, 
+      width = image.clientWidth,
+      final = [width, height, width, height].map((v,i) => v*coordinates[i])
+
+  el.coords = final.join(",")
+}
+function setCoordinates() {
+  shapes_to_fix.forEach(shape => coordinateFinder(shape))
+  //areas.forEach(a => a.onclick = )
+  /*
+  coordinateFinder([(676/1422),(341/800),(717/1422),(448/800)],document.getElementById('main'),document.getElementById('microscope-shape'))
+  coordinateFinder([(757/1422),(431/800),(860/1422),(531/800)],document.getElementById('main'),document.getElementById('punnet-shape'))
+  coordinateFinder([(440/1422),(187/800),(493/1422),(234/800)],document.getElementById('main'),document.getElementById('smiley-shape'))
+  coordinateFinder([(659/1422),(364/800),(710/1422),(396/800)],document.getElementById('main'),document.getElementById('bloody-shape'))
+  coordinateFinder([(595/1400),(144/788),(650/1400),(172/788)],document.getElementById('main'),document.getElementById('hydro-shape'))
+  */
+  /*
+  var comp = document.getElementById("comp-shape")
+  coordinateFinder([(242/752),(287/699),(304/752),(317/699)],document.getElementById('main'),comp)
+  */
+
+}
 
 function makeNew(){
   establishHints()
@@ -450,11 +487,6 @@ outerWidth ==> width and height of window.
 */
 
 
-
-function setCoordinatesT(){
-  var comp = document.getElementById("comp-shape")
-  coordinateFinder([(304/752),(287/699),(242/752),(317/699)],document.getElementById('main'),comp)
-}
 
 function errorButton(){
   puzzlePageT = "./images/findTheErrors.jpg"
