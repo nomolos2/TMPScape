@@ -207,6 +207,7 @@ let puzzleData = [
     areaCoords: [301, 286, 344, 317],},
 
 ]*/
+document.body.onload = allowClick
 pageLinks = {
   "WindowView4.jpg":["hydro-shape","bloody-shape"],
   "leftSideView2.jpg":["microscope-shape"],
@@ -214,7 +215,7 @@ pageLinks = {
   "rightSideView1.jpg":["smiley-shape"],
   "backTaliff.png":["comp-shape"]}
 idDic = {"hydro-shape": [hydroFunction,"./camerafiles/hydroponicCloseup2.jpg"],
-        "bloody-shape":[bloodFunction,"./camerafiles/travelingLight.jpg"],
+        "bloody-shape":[bloodFunction,"./camerafiles/bloodyCloseUp.jpg"],
         "microscope-shape" :[microscopeFunction,"./camerafiles/microScopeCloseUp.jpg"],
         "punnet-shape":[punnetFunction,"./images/frontView3.jpg"],
         "smiley-shape": [lightFunction, "./camerafiles/travelingLight.jpg"],
