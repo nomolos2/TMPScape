@@ -283,11 +283,56 @@
 #comp-shape{
     cursor: pointer;
     top: 41%;
-    left:30.1%;
-    width:8.3%;
+    left:32.1%;
+    width:5.3%;
     height:4.3%;
     position:absolute;
     background-color:red;
+}
+#blue-shape{
+    cursor: pointer;
+    top: 44.2%;
+    left: 18.9%;
+    width: 7.3%;
+    height: 8.7%;
+    position:absolute;
+    background-color: red;
+}
+#front-shape{
+    cursor: pointer;
+    top: 45.8%;
+    left: 37.9%;
+    width: 6%;
+    height: 8.5%;
+    position:absolute;
+    background-color: blue;
+}
+#book-shape{
+    cursor: pointer;
+    top: 48.7%;
+    left: 77.9%;
+    width: 12%;
+    height: 5.7%;
+    position:absolute;
+    background-color: red;
+}
+#clock-shape{
+    cursor: pointer;
+    top: 5.2%;
+    left: 53.8%;
+    width: 7.3%;
+    height: 10%;
+    position:absolute;
+    background-color: red;
+}
+#chair-shape{
+    cursor: pointer;
+    top: 49%;
+    left: 61.5%;
+    width: 7.1%;
+    height: 9%;
+    position:absolute;
+    background-color: red;
 }
 #names{
     position:relative;

@@ -14,9 +14,8 @@ let coords_dict = {
   //"smiley-shape":     [ 0.309, 0.233, 0.346, 0.292 ],
   //"bloody-shape":     [ 0.463, 0.455, 0.499, 0.495 ],
   //"hydro-shape":      [ 0.425, 0.182, 0.464, 0.218 ],
-  //"comp-shape":  [ 0.321, 0.410, 0.404, 0.453 ],
-   
-  "blue-shape":       [ 0.234, 0.452, 0.327, 0.539 ],
+  //"comp-shape":       [ 0.321, 0.410, 0.404, 0.453 ],
+  //"blue-shape":       [ 0.234, 0.452, 0.327, 0.539 ],
 }
 /*
 function setCoordinatesT(){
@@ -213,15 +212,23 @@ pageLinks = {
   "leftSideView2.jpg":["microscope-shape"],
   "frontView3.jpg":["punnet-shape"],
   "rightSideView1.jpg":["smiley-shape"],
-  "backTaliff.png":["comp-shape"]}
+  "backTaliff.png":["comp-shape"],
+  "leftsideTaliff.jpg":["blue-shape","clock-shape"],
+  "frontTaliff.jpg":["front-shape","chair-shape"],
+  "RighsideTaliff.png":["book-shape"],
+}
 idDic = {"hydro-shape": [hydroFunction,"./camerafiles/hydroponicCloseup2.jpg"],
         "bloody-shape":[bloodFunction,"./camerafiles/bloodyCloseUp.jpg"],
         "microscope-shape" :[microscopeFunction,"./camerafiles/microScopeCloseUp.jpg"],
         "punnet-shape":[punnetFunction,"./images/frontView3.jpg"],
         "smiley-shape": [lightFunction, "./camerafiles/travelingLight.jpg"],
-        "error-shape": [errorFunction,"./images/findTheErrors.png"],
-        "blue-shape":[insertFunction, "./images/inputErrors.png"]}
-allLinks = ["hydro-shape","bloody-shape","microscope-shape","punnet-shape","smiley-shape","comp-shape","blue-shape"]
+        "comp-shape": [compFunction,"./images/findTheErrors.jpg"],
+        "blue-shape":[insertFunction, "./images/inputErrors.png"],
+        "front-shape":[frontFunction, "./images/taliffComputer.png"],
+        "book-shape":[bookFunction, "./images/textbook.png"],
+        "clock-shape":[clockFunction, "./images/clock.png"],
+        "chair-shape":[chairFunction, "./images/spinnyChair.png"]}
+allLinks = ["hydro-shape","bloody-shape","microscope-shape","punnet-shape","smiley-shape","comp-shape","blue-shape","front-shape","book-shape","clock-shape","chair-shape"]
 function goehringButtonOLD(puzzle){
   
   let main = document.getElementById('main');
@@ -541,7 +548,7 @@ function insertFunction(){
   //puzzlePageT = "./images/inputErrors.png"
   //main.src = puzzlePageT
 }
-function errorFunction(){
+function compFunction(){
   //puzzlePageT = "./images/inputErrors.png"
   //main.src = puzzlePageT
 }
@@ -552,5 +559,18 @@ function bloodFunction(){
 function lightFunction(){
   //this is a blank function
 }
-
-
+function insertFunction(){
+  //this is a blank function
+}
+function frontFunction(){
+  //this is a blank function
+}
+function bookFunction(){
+  //this is a blank function
+}
+function clockFunction(){
+  //this is a blank function
+}
+function chairFunction(){
+  //this is a blank function
+}
