@@ -345,16 +345,12 @@
     width: 500px;
     height: 200px;
 }
-#inserter{
+#password{
     position: relative;
     background-color: white;
     font-size: 10;
     border-radius: 5px;
     display: none;
-    /*top: 140;
-    left: 350;
-    width: 350px;
-    height: 40px;*/
     top: 326;
     left: 525;
     width: 100;
@@ -500,7 +496,6 @@
 .taliffTable{
     border-color: rgb(240, 239, 239);
     border: 3px solid;
-    color: rgb(247, 247, 247);
     z-index: 30;
     width: 500px;
     height: 50px;
@@ -512,4 +507,19 @@
     font-family: Arial;
     font-weight: bold;
     font-size: 20;
+}
+.firstSection{
+    color: white;
+}
+.secondSection{
+    color: black;
+}
+.thirdSection{
+    color: black;
+}
+.fourthSection{
+    color: black;
+}
+.fifthSection{
+    color: black;
 }

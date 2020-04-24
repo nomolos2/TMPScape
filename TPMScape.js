@@ -85,7 +85,7 @@ function checkHint(name){
 
 }
 // Set the date we're counting down to
-let countDownDate = Date.now() + 600000
+let countDownDate = Date.now() + 60000000
 
 
 // Update the count down every 1 second
@@ -390,7 +390,6 @@ function checkAnswer(rightAnswer,nextFunction,nextFailure,from){
 }
 function establishTime(){
   localStorage.setItem("time", 0)
-
 }
 function moveOn(){
 
@@ -551,9 +550,17 @@ function compFunction(){ //#1 - find the errors in the python code
   let comp = document.getElementById('findingErrors')
   comp.style.display="block"
 }
+function passwordCorrect(){
+  debugger
+  firstSection = document.getElementsByClassName("firstSection")
+  firstSection.forEach(tag => tag.style.color = "black")
+}
+function passwordFailure(){
+  alert('2')
+}
 function insertFunction(){ //#2 - insert the errors into the computer on clock wall
-  let inserter = document.getElementById('inserter')
-  inserter.style.display="block"
+  let password = document.getElementById('password')
+  password.style.display="block"
 }
 function frontFunction(){ //#3 - Dr. Taliff's Computer
   let comp = document.getElementById('TaliffCompText')
