@@ -334,6 +334,43 @@
     position:absolute;
     background-color: red;
 }
+#findingErrors{
+    position: relative;
+    background-color: white;
+    font-size: 20;
+    top: 70;
+    left: 260;
+    border-radius: 5px;
+    display: none;
+    width: 500px;
+    height: 200px;
+}
+#inserter{
+    position: relative;
+    background-color: white;
+    font-size: 10;
+    border-radius: 5px;
+    display: none;
+    /*top: 140;
+    left: 350;
+    width: 350px;
+    height: 40px;*/
+    top: 326;
+    left: 525;
+    width: 100;
+    height: 15;
+}
+#TaliffCompText{
+    position: relative;
+    background-color: white;
+    font-size: 20;
+    top: 350;
+    left: 310;
+    border-radius: 5px;
+    display: none;
+    width: 480px;
+    height: 150px;
+}
 #names{
     position:relative;
     top:70;

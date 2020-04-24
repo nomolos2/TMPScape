@@ -18,48 +18,65 @@
         <button  onclick =  "imageChanger('./images/leftsideTaliff.jpg')">
             <img class="imageFour" id="left" src="images/leftsideTaliff.jpg" width="85px"/>
          </button>
+         <p id="demo" class="timer"></p>
+        <div id="findingErrors" class="blank">
+            <p>year = int(input("Greetings! What is your year of origin? "))</br>
+
+                    &nbsp&nbsp&nbsp&nbspif year <= 1900:[</br>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspprint (("Woah, that's the past!"*)</br>
+                    &nbsp&nbsp&nbsp&nbspelif year > 1900 and year <_ 2020:* </br>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspprint ("That's totally the present!"))</br>
+                    &nbsp&nbsp&nbsp&nbspelse:</br>
+                    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspprint ("Far out, that's the future!!")]</p>
+        </div>
+        <div id="TaliffCompText" class="blank">
+            <p>1. Dumb &nbsp<input type="text" id="lname" name="lname" size="5">&nbsp<input type="text" id="tname" name="tname" size="3"></p>
+            <p>2. You get no &nbsp<input type="text" id="lname" name="lname" size="5"></p>
+            <p>3. How do you know this? By reading the &nbsp<input type="text" id="lname" name="lname" size="8"></p>
+        </div>
+        <input id="inserter" class="blank"></input>
          <table class="taliffTable">
-                <tr>
+                <tr><!---->
                     <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
-                    <td>&nbsp</td>
+                    <td>4</td>
+                    <td>5</td>
+                    <td>6</td>
+                    <td>4</td>
+                    <td>7</td>
+                    <td>7</td>
+                    <td>6</td>
+                    <td>1</td>
+                    <td>7</td>
+                    <td>2</td>
+                    <td>6</td>
+                    <td>4</td>
+                    <td>_</td>
+                    <td>4</td>
+                    <td>D</td>
+                    <td>_</td>
+                    <td>5</td>
+                    <td>4</td>
+                    <td>6</td>
+                    <td>1</td>
+                    <td>6</td>
+                    <td>C</td>
+                    <td>6</td>
+                    <td>9</td>
+                    <td>6</td>
+                    <td>6</td>
+                    <td>6</td>
+                    <td>6</td>
                     <td>&nbsp</td>
                 </tr>
             </table>
          <button class="label"onclick="moveOn()">Move On</button>
-        <p id="demo" class="timer"></p>
         <div id="comp-shape" shape="rect" alt="Zoom" onclick="clickFunc('comp-shape')" ></div>
         <div id="blue-shape" shape="rect" alt="Zoom" onclick="clickFunc('blue-shape')"></div>
         <div id="front-shape" shape="rect" alt="Zoom" onclick="clickFunc('front-shape')"></div>
         <div id="book-shape" shape="rect" alt="Zoom" onclick="clickFunc('book-shape')"></div>
         <div id="clock-shape" shape="rect" alt="Zoom" onclick="clickFunc('clock-shape')"></div>
         <div id="chair-shape" shape="rect" alt="Zoom" onclick="clickFunc('chair-shape')"></div>
+        <p id="input2"></p>
    </body>
    <script type="text/javascript" src="TPMScape.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>

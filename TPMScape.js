@@ -544,33 +544,27 @@ function taliffFunction(choice){
   }
 }
 */
-function insertFunction(){
-  //puzzlePageT = "./images/inputErrors.png"
-  //main.src = puzzlePageT
-}
-function compFunction(){
-  //puzzlePageT = "./images/inputErrors.png"
-  //main.src = puzzlePageT
-}
-function bloodFunction(){
-  let dna = document.getElementById('names')
-  dna.style.display="block"
-  }
-function lightFunction(){
+function lightFunction(){ //Goehring
   //this is a blank function
 }
-function insertFunction(){
+function compFunction(){ //#1 - find the errors in the python code
+  let comp = document.getElementById('findingErrors')
+  comp.style.display="block"
+}
+function insertFunction(){ //#2 - insert the errors into the computer on clock wall
+  let inserter = document.getElementById('inserter')
+  inserter.style.display="block"
+}
+function frontFunction(){ //#3 - Dr. Taliff's Computer
+  let comp = document.getElementById('TaliffCompText')
+  comp.style.display="block"
+}
+function bookFunction(){ //#4 - textbook questions
   //this is a blank function
 }
-function frontFunction(){
+function clockFunction(){ //#5 - Clock
   //this is a blank function
 }
-function bookFunction(){
-  //this is a blank function
-}
-function clockFunction(){
-  //this is a blank function
-}
-function chairFunction(){
+function chairFunction(){ //#6 - what does the spinny chair say
   //this is a blank function
 }
