@@ -551,9 +551,8 @@ function compFunction(){ //#1 - find the errors in the python code
   comp.style.display="block"
 }
 function passwordCorrect(){
-  debugger
-  firstSection = document.getElementsByClassName("firstSection")
-  firstSection.forEach(tag => tag.style.color = "black")
+  firstSection = document.querySelectorAll(".first-section")
+  firstSection.forEach(letter => letter.style.visibility="visible")
 }
 function passwordFailure(){
   alert('2')

@@ -507,9 +507,10 @@
     font-family: Arial;
     font-weight: bold;
     font-size: 20;
-}
-.firstSection{
     color: white;
+}
+.first-section{
+    visibility: hidden;
 }
 .secondSection{
     color: black;
