@@ -562,6 +562,12 @@ function insertFunction(){ //#2 - insert the errors into the computer on clock w
   let password = document.getElementById('password')
   password.style.display="block"
 }
+function frontCorrect(){
+  alert('1')
+}
+function frontFailure(){
+  alert('2')
+}
 function frontFunction(){ //#3 - Dr. Taliff's Computer
   let comp = document.getElementById('TaliffCompText')
   comp.style.display="block"
