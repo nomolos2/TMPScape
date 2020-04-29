@@ -127,7 +127,6 @@ let puzzleData = [
   {
     startPage: "/WindowView4.jpg",
     puzzlePage: "./camerafiles/bloodyCloseUp.jpg",
-
     puzzle: 'blood',
     page: 'Goehring',
     func:bloodFunction,
@@ -140,7 +139,6 @@ let puzzleData = [
   {
     startPage: "/rightSideView1.jpg",
     puzzlePage: "./camerafiles/travelingLight.jpg",
-
     puzzle: 'travelingLight',
     page: 'Goehring',
     imageid: 'main',
@@ -179,9 +177,7 @@ let puzzleData = [
   {
     startPage: "/leftSideView2.jpg",
     puzzlePage: "./camerafiles/microScopeCloseUp.jpg",
-
     puzzle: 'microscope',
-
     page: 'Goehring',
     imageid: 'main',
     imageHeight: 800,
@@ -204,7 +200,6 @@ let puzzleData = [
     scaling: [1307, 778, 1307, 778],
     areaid: 'comp-shape',
     areaCoords: [301, 286, 344, 317],},
-
 ]*/
 document.body.onload = allowClick
 pageLinks = {
@@ -449,10 +444,8 @@ let shapes_to_fix = []
 if (document.location.pathname.includes("/TaliffPage.html")){
   shapes_to_fix = ['comp-shape']
 }
-
 document.body.onload = setCoordinates
 document.body.onresize = setCoordinates  
-
 function coordinateFinderOLD(coordinates, image, affectee)
 {
   let height = image.clientHeight, width = image.clientWidth,
@@ -464,11 +457,9 @@ function coordinateFinder(shape) {
   let el = document.getElementById(shape)
   let image = document.getElementById('main')
   let coordinates = coords_dict[shape]
-
   let height = image.clientHeight, 
       width = image.clientWidth,
       final = [width, height, width, height].map((v,i) => v*coordinates[i])
-
   el.coords = final.join(",")
 }
 function setCoordinates() {
@@ -498,21 +489,17 @@ let origHeight = 800, origWidth = 1422,
     scaling = [origWidth, origHeight, origWidth, origHeight],
     origCoords = [676,341,717,448],
     unitCoords = origCoords.map((v,i) => v / scaling[i])
-
 function getcoords(imageEl, shapeEl) {
   let newHeight = imageEl.clientHeight,
       newWidth = imageEl.clientWidth,
       
   shapeEl.coords = newCoords.join(",")
 }
-
 let setCoords = () => getcoords(
                         document.getElementById("main"),
                         document.getElementById("microscope-shape"))
-
 window.onload = setCoords
 window.onresize = setCoords
-
 class Foo {
   constructor(x) {
     this.foo = x
@@ -527,11 +514,6 @@ class Foo {
 document.body.addEventListener('mousedown',e => console.log(e.x,e.y)) ==> click on coordinates
 outerHeight
 outerWidth ==> width and height of window.
-
-
-
-
-
 function taliffFunction(choice){
   if(choice == 'error' && main.src.includes("backTaliff")){
     puzzlePageT = "./images/findTheErrors.jpg"
@@ -551,22 +533,30 @@ function compFunction(){ //#1 - find the errors in the python code
   comp.style.display="block"
 }
 function passwordCorrect(){
-  debugger
-  firstSection = document.getElementsByClassName("firstSection")
-  firstSection.forEach(tag => tag.style.color = "black")
+  firstSection = document.querySelectorAll(".first-section")
+  firstSection.forEach(letter => letter.style.visibility="visible")
 }
 function passwordFailure(){
-  alert('2')
+  alert('Incorrect')
 }
 function insertFunction(){ //#2 - insert the errors into the computer on clock wall
   let password = document.getElementById('password')
   password.style.display="block"
 }
 function frontCorrect(){
-  alert('1')
+  let correction = document.getElementById('correction')
+  correction.style.display="block"
+}
+function frontCorrectTwo(){
+  let correction = document.getElementById('correction')
+  correction.style.display="block"
+}
+function frontCorrectThree(){
+  secondSection = document.querySelectorAll(".second-section")
+  secondSection.forEach(letter => letter.style.visibility="visible")
 }
 function frontFailure(){
-  alert('2')
+  alert('Incorrect')
 }
 function frontFunction(){ //#3 - Dr. Taliff's Computer
   let comp = document.getElementById('TaliffCompText')
