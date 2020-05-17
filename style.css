@@ -217,14 +217,12 @@
     right: 20px;
     margin-top: 0px; 
     display:block;
-    border:3px solid white;
-    background-color:black;
+    border:3px solid #FFFFFF;
+    background-color:#212121;
     color:white;
     border-radius: 5px;
     width: 110px;
 }
-
-
 .img-main {
     position:fixed;
     width:100%;
@@ -260,7 +258,7 @@
     width: 3.7%;
     height:5.9%;
     position:absolute;
-    background-color:red;
+    background-color:;
 }
 #punnet-shape{
     cursor: pointer;
@@ -278,7 +276,7 @@
     width:3.9%;
     height:3.6%;
     position:absolute;
-    background-color:red;
+    background-color:;
 }
 #comp-shape{
     cursor: pointer;
@@ -383,34 +381,77 @@
     position:relative;
     top:70;
     left:20;
-    color:red;
-    font-size:15;
-    background-color:white;
-    border-radius:5px;
-    width:250px;
+    color:#FFFFFF;
+    font-size:13;
+    background-color:#212121;
+    border-radius:2px;
+    width:270px;
+    height:360px;
     display:none;
+    padding: 10px;
+    font-family: Trebuchet MS;
+    opacity: 77%;
+}
+.buttonDesign{
+    position: center;
+    display:block;
+    width:100px;
+    height:30px;
+    border:3px solid white;
+    background-color:#121212;
+    color:#FFFFFF;
+    font-family:sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    border-radius: 3px;
+    transition: background-color 1000ms, color 1000ms;
+}
+.buttonDesign:hover{
+    background-color: #FFFFFF;
+    color:#121212;
+    cursor:pointer;
 }
 #equation{
     position:relative;
     top:70;
-    left:80;
-    color:black;
-    font-size:50;
-    background-color:white;
-    border-radius:5px;
+    left:20;
+    color:#FFFFFF;
+    font-size:35;
+    background-color:#212121;
+    border-radius:2px;
+    width:270px;
+    height:360px;
     display:none;
-
+    padding: 10px;
+    opacity: 77%;
+    font-family: Trebuchet MS;
 }
 #leaves{
     position:relative;
-    top:70;
-    left:80;
+    top:50;
+    left:30;
     color:black;
-    font-size:50;
+    font-size:20;
     background-color:white;
     border-radius:5px;
     display:none;
-
+    width: 200;
+    height: 30;
+}
+#leavesBlock{
+    position:relative;
+    top:70;
+    left:20;
+    color:#FFFFFF;
+    font-size:30;
+    background-color:#212121;
+    border-radius:2px;
+    width:270px;
+    height:160px;
+    display:none;
+    padding: 10px;
+    font-family: Trebuchet MS;
+    opacity: 77%;
 }
 #punneter{
     position:relative;
@@ -433,13 +474,23 @@
 }
 #back{
     position:absolute;
-    top:30;
+    top:25;
     right:150px;
-    font-size:40;
+    width:120px;
+    height:53px;
+    border:3px solid white;
+    background-color:#212121;
+    color: #FFFFFF;
+    font-family:sans-serif;
+    font-size: 30px;
+    border-radius: 5px;
 }
 #inputter{
-    height:50px;
-    font-size:20px;
+    height:25;
+    width:150;
+    font-size:20;
+    border-radius:2;
+    font-family: Trebuchet MS;
 }
 #video{
     position:absolute;
@@ -458,15 +509,26 @@
     bottom:0;
     left:0;
     display:none;
- 
-    
+    font-family:sans-serif;
+    font-weight: bold;
 }
 #hidden-box{
     position:relative;
-    width:80vmax;
-    height:5vmax;
-    font-size:30px;
-  
+    width:900;
+    height:50;
+    font-size:16px;
+    left: 5;
+}
+#hidden-button{
+    position:relative;
+    width:150;
+    height:50;
+    font-size:12px;
+    border:3px solid white;
+    background-color:#303030;
+    color: #FFFFFF;
+    font-family:sans-serif;
+    border-radius: 2px;
 }
 #higher{
     position: absolute;
