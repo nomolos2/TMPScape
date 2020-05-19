@@ -576,7 +576,7 @@ function frontCorrectTwo(){
   let correction = document.getElementById('correction')
   correction.style.display="block"
 }
-function frontCorrectThree(){
+function frontCorrectThree(){ //this is the standard making of the thing of making the numbers at the bottom of the screen -- goes into every correct function
   secondSection = document.querySelectorAll(".second-section")
   secondSection.forEach(letter => letter.style.visibility="visible")
 }
@@ -587,12 +587,45 @@ function frontFunction(){ //#3 - Dr. Taliff's Computer
   let comp = document.getElementById('TaliffCompText')
   comp.style.display="block"
 }
-function bookFunction(){ //#4 - textbook questions
-  //this is a blank function
+function correctTextbook(){
+  let funda = document.getElementById('fundamentalsText')
+  funda.style.display="block"
+}
+function failureTextbook(){
+  alert('Incorrect')
+}
+function correctTextbookTwo(){
+  thirdSection = document.querySelectorAll(".third-section")
+  thirdSection.forEach(letter => letter.style.visibility="visible")
+}
+function failureTextbookTwo(){
+  alert('Incorrect')
+}
+function bookFunction(){ //#4 - Textbook
+  let book = document.getElementById('bookText')
+  book.style.display="block"
+}
+function correctClock(){
+  alert('corect')
+  //fourthSection = document.querySelectorAll(".fourth-section")
+  //fourthSection.forEach(letter => letter.style.visibility="visible")
+}
+
+function failureClock(){
+  alert('Incorrect')
 }
 function clockFunction(){ //#5 - Clock
-  //this is a blank function
+  let clock = document.getElementById('clockAnswers')
+  clock.style.display="block"
 }
-function chairFunction(){ //#6 - what does the spinny chair say
-  //this is a blank function
+function correctChair(){
+  fifthSection = document.querySelectorAll(".fifth-section")
+  fifthSection.forEach(letter => letter.style.visibility="visible")
+}
+function failureChair(){
+  alert('Incorrect')
+}
+function chairFunction(){ //#6 Spinny Chair
+  let chair = document.getElementById('chairAnswers')
+  chair.style.display="block"
 }
