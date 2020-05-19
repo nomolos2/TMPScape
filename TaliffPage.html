@@ -41,6 +41,33 @@
                 Correct! Complete the other answers to finish the puzzle.
             </p>
         </div>
+        <div id="bookText" class="blank">
+            
+            <input type="text" class="bname" id="book1" name="aname" size="10" onChange="checkAnswer('Fundamentals', correctTextbook, failureTextbook, 'book1')">
+            of &nbsp<input type="text" class="bname" id="book2" name="aname" size="4" onChange="checkAnswer('Python', correctTextbookTwo, failureTextbookTwo, 'book2')">
+            : First Programs
+        </div>
+        <div id=fundamentalsText class="blank">
+            <p>Correct! Complete the other answer to finish the puzzle.</p>
+        </div>
+        <div id="clockAnswers" class="blank">
+            While a multiple choice test is being administered, Edward M. Taliff PhD is most likely to: &nbsp<br>
+            <input type="radio" class="bname" id="clock1" name="choice1" value="1">Give you candy<br>
+            <input type="radio" class="cname" id="clock2" name="choice2" value="2">Go to the bathroom<br>
+            <input type="radio" class="dname" id="clock3" name="choice3" value="3">Grade assignments<br>
+            <input type="radio" class="ename" id="clock4" name="choice4" value="4">Change the answers<br><br>
+            <input type="button" class="fname" id="clockSubmit" name="submit" value="Submit" onClick="checkAnswer(4, correctClock, failureClock, 'clockSubmit')">            
+<!-- LOGIC ERROR HERE. IT DOES NOT AFFECT THE CODE OTHER THAN THE CORRECT ANSWER WILL NOT BE SHOWN AS CORRECT. THIS PROBLEM IS IN THE PROCESS OF BEING SOLVED. I KNOW I'M AN ASS, BUT I'M REALLY TRYING HERE. -->
+        
+        </div>
+        <div id=chairAnswers class="blank">
+            The chair says: I stay ____ &nbsp<br>
+            <input type="radio" class="hname" id="chair1" name="choice5" value="1">Here<br>
+            <input type="radio" class="iname" id="chair2" name="choice6" value="2">Empty<br>
+            <input type="button" class="jname" id="chairSubmit" name="Submit" value="Submit" onClick="checkAnswer(1, correctChair, failureChair, 'chairSubmit')">
+<!-- LOGIC ERROR HERE. IT DOES NOT AFFECT THE CODE OTHER THAN THE CORRECT ANSWER WILL NOT BE SHOWN AS CORRECT. THIS PROBLEM IS IN THE PROCESS OF BEING SOLVED. I KNOW I'M AN ASS, BUT I'M REALLY TRYING HERE. -->
+        </div>
+
         <input id="password" class="blank" onChange="checkAnswer('[(*_*)]',passwordCorrect, passwordFailure, 'password')"></input>
          <table class="taliffTable">
                 <tr>

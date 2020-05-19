@@ -367,6 +367,55 @@
     width: 480px;
     height: 150px;
 }
+
+#bookText{
+    position: relative;
+    background-color: white;
+    font-size: 20;
+    top: 350;
+    left: 310;
+    border-radius: 5px;
+    display: none;
+    width: 480px;
+    height: 150px;
+}
+
+#fundamentalsText{
+    position: relative;
+    background-color: white;
+    font-size: 20;
+    top: 50;
+    left: 310;
+    border-radius: 5px;
+    display: none;
+    width: 480px;
+    height: 50px;
+}
+
+#clockAnswers{
+    position: relative;
+    background-color: white;
+    font-size: 20;
+    top: 100;
+    left: 550;
+    border-radius: 5px;
+    display: none;
+    width: 400px;
+    height: 201.5px;
+}
+
+#chairAnswers{
+    position: relative;
+    background-color: white;
+    font-size: 20;
+    top: 250;
+    left: 550;
+    border-radius: 5px;
+    display: none;
+    width: 300px;
+    height: 100px;
+}
+
 #correction{
     background-color: white;
     position: relative;
@@ -528,7 +577,7 @@
     visibility: hidden;
 }
 .third-section{
-    color: black;
+    visibility: hidden;
 }
 .fourth-section{
     color: black;
