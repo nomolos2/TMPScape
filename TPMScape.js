@@ -278,6 +278,8 @@ function punnetFunction(){
 
 
 function hydroFunction(){
+let leavesB = document.getElementById('leavesBlock')
+leavesB.style.display = 'block'
 let leaves = document.getElementById('leaves')
 leaves.style.display = 'block'
 }
@@ -294,7 +296,7 @@ function microscopeFunction(){
   video.style.display="block"
   let input = document.getElementById('input2')
   input.style.display = "block"
-  input.innerHTML = "<input onchange='lowercaser(\"hidden-box\")' id='hidden-box'></input><button onclick='checkAnswer(\"extravaganza\",celeCorrect,celeWrong,\"hidden-box\")'>SUBMIT ANSWER LOWERCASE PLEASE</button>"
+  input.innerHTML = "<&nbsp><input onchange='lowercaser(\"hidden-box\")' id='hidden-box'></input><&nbsp><button onclick='checkAnswer(\"extravaganza\",celeCorrect,celeWrong,\"hidden-box\")' id='hidden-button'>SUBMIT ANSWER LOWERCASE</button>"
   let disp = document.getElementById("disp")
   disp.style.display = "none"
 }
@@ -314,7 +316,7 @@ function microCorrect(){
 function microWrong(){
     statement = document.getElementById('statement')
     text = statement.innerHTML
-    statement.innerHTML=`<label for="anainp"> You Messed Up = </label><input name="anainp" id='inputter'></input><button onclick="checkAnswer('microscope',microCorrect,microWrong,inputter)SUBMIT ANSWER</button>`
+    statement.innerHTML=`<center><label for="anainp"> You Messed Up </br></br></br></label><input name="anainp" id='inputter'></input></br></br></br><button onclick="checkAnswer('microscope',microCorrect,microWrong,inputter)SUBMIT</button></center>`
     interval = 10
     setTimeout(function(){
       startShuffle(chosen);;
@@ -324,9 +326,7 @@ function microWrong(){
 function celeCorrect(){
   
   statement = document.getElementById('input2')
-  statement.style.color="white"
-  statement.style.fontSize="30px"
-  statement.innerHTML="<input  onchange='lowercaser(\"hidden-box\")' id='hidden-box'></input><button onclick='checkAnswer(\"extravaganza\",finalish,finalish,\"hidden-box\")'>SUBMIT ANSWER LOWERCASE PLEASE</button>"
+  statement.innerHTML="<input  onchange='lowercaser(\"hidden-box\")' id='hidden-box'></input><button onclick='checkAnswer(\"extravaganza\",finalish,finalish,\"hidden-box\")'>SUBMIT ANSWER LOWERCASE</button>"
   sta = document.getElementById('higher')
   sta.style.display ="block"
   video.style.display="none"
@@ -335,7 +335,7 @@ function celeCorrect(){
 }
 function reappear(){
   let input = document.getElementById('input2')
-  input.innerHTML = "<input id='hidden-box'></input><button onclick='checkAnswer(\"extravaganza\",celeCorrect, celeWrong,\"hidden-box\")'>SUBMIT ANSWER LOWERCASE PLEASE</button>"
+  input.innerHTML = "<input id='hidden-box'></input>&nbsp&nbsp<button onclick='checkAnswer(\"extravaganza\",celeCorrect, celeWrong,\"hidden-box\")'>SUBMIT ANSWER LOWERCASE</button>"
 }
 function reappear2(){
   let input = document.querySelector('#input2')
@@ -412,8 +412,8 @@ function anagram(text){
   equation.style.display="inline-block"
   statement = document.getElementById('statement')
   statement.innerHTML = 
-  `<label for="anainp">${text} = </label>
-  <input name="anainp" onchange="lowercaser('inputter') id='inputter'></input><button>SUMBIT ANSWER</button>`
+  `<center><label for="anainp">${text} </br></br></br></label>
+  <input name="anainp" onchange="lowercaser('inputter') id='inputter'></input></br></br></br><button class="buttonDesign">SUBMIT</button></center>`
   startShuffle(text)
 
 
@@ -426,8 +426,8 @@ function startShuffle(text){
       let newPhrase = _.shuffle(phrase) 
       newPhrase = newPhrase.join('')
       statement.innerHTML = 
-      `<label for="anainp">${newPhrase} = </label>
-      <input onchange="lowercaser('inputter') name="anainp" id='inputter'></input><button onclick="checkAnswer('microscope',microCorrect,microWrong,'inputter')">SUBMIT ANSWER</button>`
+      `<center><label for="anainp">${newPhrase} </br></br></br></label>
+      <input onchange="lowercaser('inputter') name="anainp" id='inputter'></input></br></br></br><button class="buttonDesign" onclick="checkAnswer('microscope',microCorrect,microWrong,'inputter')">SUBMIT</button></center>`
       
       shuffleCount = shuffleCount - 1
       if (shuffleCount <= 0){
