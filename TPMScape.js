@@ -273,6 +273,7 @@ function punnetFunction(){
   punny.style.top = `${top}`
   punny.style.width = `${width}`
   punny.style.height = `${height}`
+ 
 
 }
 
@@ -337,6 +338,10 @@ function reappear(){
   let input = document.getElementById('input2')
   input.innerHTML = "<input id='hidden-box'></input>&nbsp&nbsp<button onclick='checkAnswer(\"extravaganza\",celeCorrect, celeWrong,\"hidden-box\")'>SUBMIT ANSWER LOWERCASE</button>"
 }
+function reappear3(){
+  debugger
+  let words = document.getElementById('quadraticWords')
+  words.innerHTML =  "<p >Speaking of phtons... photons are know for causing PHOTOSYNTHESIS. </p><input id='twenty-three' onchange=\"checkAnswer('23',smileCorrect,smileWrong,'twenty-three')\">"}
 function reappear2(){
   let input = document.querySelector('#input2')
   input.style.display = "block"
@@ -374,6 +379,7 @@ function finalish(){
 }
 
 function checkAnswer(rightAnswer,nextFunction,nextFailure,from){
+  debugger
   statement = document.getElementById('statement')
   answer = document.getElementById(from)
   if (answer.value == rightAnswer){
@@ -439,6 +445,18 @@ function lowercaser(iden){
   text = document.querySelector(`#${iden}`)
   text.value = text.value.toLowerCase()
 }
+function smileCorrect(){
+  let words = document.querySelector("#quadraticWords")
+  words.innerHTML="Squares and Puns. Figure it out."
+}
+function smileWrong(){
+  let words = document.querySelector("#quadraticWords")
+  words.innerHTML="It was wrong"
+  setTimeout(function(){
+    reappear3();;
+}, 2000); 
+}
+
 /*
 let shapes_to_fix = []
 if (document.location.pathname.includes("/TaliffPage.html")){
@@ -527,6 +545,13 @@ function taliffFunction(choice){
 */
 function lightFunction(){ //Goehring
   //this is a blank function
+  let Ushape = document.querySelector("#quad")
+  Ushape.style.display="block"
+  let words = document.querySelector("#quadraticWords")
+  words.style.display="block"
+
+
+  
 }
 function compFunction(){ //#1 - find the errors in the python code
   let comp = document.getElementById('findingErrors')
