@@ -20,6 +20,7 @@
          </button>
          <p id="demo" class="timer"></p>
         <div id="findingErrors" class="blank">
+            <p id="findingText">There are a lot of errors in this code:</p>
             <p>year = int(input("Greetings! What is your year of origin? "))</br>
 
                     &nbsp&nbsp&nbsp&nbspif year <= 1900:[</br>
@@ -37,37 +38,35 @@
             3. How do you know this? By reading the &nbsp<input type="text" class="lname" id="three" name="lname" size="8" onChange="checkAnswer('textbook', frontCorrectThree, frontFailure, 'three')">
         </div>
         <div class="blank" id="correction">
-            <p>
-                Correct! Complete the other answers to finish the puzzle.
-            </p>
+            <p>Correct! Complete the other answers to finish the puzzle.</p>
         </div>
         <div id="bookText" class="blank">
             
-            <input type="text" class="bname" id="book1" name="aname" size="10" onChange="checkAnswer('Fundamentals', correctTextbook, failureTextbook, 'book1')">
-            of &nbsp<input type="text" class="bname" id="book2" name="aname" size="4" onChange="checkAnswer('Python', correctTextbookTwo, failureTextbookTwo, 'book2')">
+            <input type="text" class="bname" id="book1" name="aname" size="13" onChange="checkAnswer('Fundamentals', correctTextbook, failureTextbook, 'book1')">
+            of &nbsp<input type="text" class="bname" id="book2" name="aname" size="7" onChange="checkAnswer('Python', correctTextbookTwo, failureTextbookTwo, 'book2')">
             : First Programs
         </div>
         <div id=fundamentalsText class="blank">
             <p>Correct! Complete the other answer to finish the puzzle.</p>
         </div>
         <div id="clockAnswers" class="blank">
-            While a multiple choice test is being administered, Edward M. Taliff PhD is most likely to: &nbsp<br>
-            <input type="radio" class="bname" id="clock1" name="choice1" value="1">Give you candy<br>
-            <input type="radio" class="cname" id="clock2" name="choice2" value="2">Go to the bathroom<br>
-            <input type="radio" class="dname" id="clock3" name="choice3" value="3">Grade assignments<br>
-            <input type="radio" class="ename" id="clock4" name="choice4" value="4">Change the answers<br><br>
-            <input type="button" class="fname" id="clockSubmit" name="submit" value="Submit" onClick="checkAnswer(4, correctClock, failureClock, 'clockSubmit')">            
-<!-- LOGIC ERROR HERE. IT DOES NOT AFFECT THE CODE OTHER THAN THE CORRECT ANSWER WILL NOT BE SHOWN AS CORRECT. THIS PROBLEM IS IN THE PROCESS OF BEING SOLVED. I KNOW I'M AN ASS, BUT I'M REALLY TRYING HERE. -->
+            While a multiple choice test is being administered, Edward M. Taliff is most likely to: &nbsp<br></br>
+            <input type="radio" class="bname" id="clock1" name="choice">Give you candy<br>
+            <input type="radio" class="cname" id="clock2" name="choice">Go to the bathroom<br>
+            <input type="radio" class="dname" id="clock3" name="choice">Grade assignments<br>
+            <input type="radio" class="ename" id="clock4" name="choice">Change the answers<br><br>
+            <input type="button" class="fname" id="clockSubmit" name="submit" value="SUBMIT" onClick="extra()">
         
         </div>
         <div id=chairAnswers class="blank">
-            The chair says: I stay ____ &nbsp<br>
-            <input type="radio" class="hname" id="chair1" name="choice5" value="1">Here<br>
-            <input type="radio" class="iname" id="chair2" name="choice6" value="2">Empty<br>
-            <input type="button" class="jname" id="chairSubmit" name="Submit" value="Submit" onClick="checkAnswer(1, correctChair, failureChair, 'chairSubmit')">
-<!-- LOGIC ERROR HERE. IT DOES NOT AFFECT THE CODE OTHER THAN THE CORRECT ANSWER WILL NOT BE SHOWN AS CORRECT. THIS PROBLEM IS IN THE PROCESS OF BEING SOLVED. I KNOW I'M AN ASS, BUT I'M REALLY TRYING HERE. -->
+            The chair says: I stay ____ &nbsp<br></br>
+            <input type="radio" class="hname" id="chair1" name="choice2" value="1">Here<br>
+            <input type="radio" class="iname" id="chair2" name="choice2" value="2">Empty<br></br>
+            <input type="button" class="jname" id="chairSubmit" name="Submit" value="SUBMIT" onClick="extra2()">
         </div>
 
+        <input type="text" id="finalInput" class="blank" value="Input Value Here" onChange="checkAnswer('456477617264_4D_54616C696666', correctFinal, failureFinal, 'finalInput')">
+        
         <input id="password" class="blank" onChange="checkAnswer('[(*_*)]',passwordCorrect, passwordFailure, 'password')"></input>
          <table class="taliffTable">
                 <tr>
@@ -110,6 +109,7 @@
         <div id="book-shape" shape="rect" alt="Zoom" onclick="clickFunc('book-shape')"></div>
         <div id="clock-shape" shape="rect" alt="Zoom" onclick="clickFunc('clock-shape')"></div>
         <div id="chair-shape" shape="rect" alt="Zoom" onclick="clickFunc('chair-shape')"></div>
+        <div id="final-shape" shape="rect" alt="Zoom" onClick="clickFunc('final-shape')"></div>
         <p id="input2"></p>
    </body>
    <script type="text/javascript" src="TPMScape.js"></script>

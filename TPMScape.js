@@ -209,7 +209,7 @@ pageLinks = {
   "rightSideView1.jpg":["smiley-shape"],
   "backTaliff.png":["comp-shape"],
   "leftsideTaliff.jpg":["blue-shape","clock-shape"],
-  "frontTaliff.jpg":["front-shape","chair-shape"],
+  "frontTaliff.jpg":["front-shape","chair-shape","final-shape"],
   "RighsideTaliff.png":["book-shape"],
 }
 idDic = {"hydro-shape": [hydroFunction,"./camerafiles/hydroponicCloseup2.jpg"],
@@ -222,8 +222,9 @@ idDic = {"hydro-shape": [hydroFunction,"./camerafiles/hydroponicCloseup2.jpg"],
         "front-shape":[frontFunction, "./images/taliffComputer.png"],
         "book-shape":[bookFunction, "./images/textbook.png"],
         "clock-shape":[clockFunction, "./images/clock.png"],
-        "chair-shape":[chairFunction, "./images/spinnyChair.png"]}
-allLinks = ["hydro-shape","bloody-shape","microscope-shape","punnet-shape","smiley-shape","comp-shape","blue-shape","front-shape","book-shape","clock-shape","chair-shape"]
+        "chair-shape":[chairFunction, "./images/spinnyChair.png"],
+        "final-shape":[finalFunction, "./images/finalBack.png"]}
+allLinks = ["hydro-shape","bloody-shape","microscope-shape","punnet-shape","smiley-shape","comp-shape","blue-shape","front-shape","book-shape","clock-shape","chair-shape","final-shape"]
 function goehringButtonOLD(puzzle){
   
   let main = document.getElementById('main');
@@ -562,7 +563,7 @@ function passwordCorrect(){
   firstSection.forEach(letter => letter.style.visibility="visible")
 }
 function passwordFailure(){
-  alert('Incorrect')
+//   alert('Incorrect')
 }
 function insertFunction(){ //#2 - insert the errors into the computer on clock wall
   let password = document.getElementById('password')
@@ -581,7 +582,7 @@ function frontCorrectThree(){ //this is the standard making of the thing of maki
   secondSection.forEach(letter => letter.style.visibility="visible")
 }
 function frontFailure(){
-  alert('Incorrect')
+//  alert('Incorrect')
 }
 function frontFunction(){ //#3 - Dr. Taliff's Computer
   let comp = document.getElementById('TaliffCompText')
@@ -592,40 +593,59 @@ function correctTextbook(){
   funda.style.display="block"
 }
 function failureTextbook(){
-  alert('Incorrect')
+//  alert('Incorrect')
 }
 function correctTextbookTwo(){
   thirdSection = document.querySelectorAll(".third-section")
   thirdSection.forEach(letter => letter.style.visibility="visible")
 }
 function failureTextbookTwo(){
-  alert('Incorrect')
+//  alert('Incorrect')
 }
 function bookFunction(){ //#4 - Textbook
   let book = document.getElementById('bookText')
   book.style.display="block"
 }
-function correctClock(){
-  alert('corect')
-  //fourthSection = document.querySelectorAll(".fourth-section")
-  //fourthSection.forEach(letter => letter.style.visibility="visible")
-}
-
 function failureClock(){
-  alert('Incorrect')
+  
 }
 function clockFunction(){ //#5 - Clock
   let clock = document.getElementById('clockAnswers')
   clock.style.display="block"
 }
-function correctChair(){
-  fifthSection = document.querySelectorAll(".fifth-section")
-  fifthSection.forEach(letter => letter.style.visibility="visible")
-}
 function failureChair(){
-  alert('Incorrect')
+//  alert('Incorrect')
 }
 function chairFunction(){ //#6 Spinny Chair
   let chair = document.getElementById('chairAnswers')
   chair.style.display="block"
+}
+function extra(){
+  if(document.getElementById('clock4').checked == true){
+    fourthSection = document.querySelectorAll(".fourth-section")
+    fourthSection.forEach(letter => letter.style.visibility="visible")
+  }
+  if(document.getElementById('clock4').checked == false){
+//    alert('Incorrect')
+  }
+
+}
+function extra2(){
+  if(document.getElementById('chair1').checked == true){
+    fifthSection = document.querySelectorAll(".fifth-section")
+    fifthSection.forEach(letter => letter.style.visibility="visible")
+  }
+  if(document.getElementById('chair1').checked == false){
+//    alert('Incorrect')
+  }
+}
+function finalFunction(){
+  let finalt = document.getElementById('finalInput')
+  finalt.style.display="block"
+}
+function correctFinal(){
+  alert('correct') //Here is where it should be linked to the win page.
+}
+function failureFinal(){
+  //alert('incorrect')
 }
