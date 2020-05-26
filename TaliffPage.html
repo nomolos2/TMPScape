@@ -65,7 +65,7 @@
             <input type="button" class="jname" id="chairSubmit" name="Submit" value="SUBMIT" onClick="extra2()">
         </div>
 
-        <input type="text" id="finalInput" class="blank" value="Input Value Here" onChange="checkAnswer('456477617264_4D_54616C696666', correctFinal, failureFinal, 'finalInput')">
+        <input type="text" id="finalInput" class="blank" value="Input Value Here" onfocus="deleteContent()" onChange="checkAnswer('456477617264_4D_54616C696666', moveOn, failureFinal, 'finalInput')">
         
         <input id="password" class="blank" onChange="checkAnswer('[(*_*)]',passwordCorrect, passwordFailure, 'password')"></input>
          <table class="taliffTable">
@@ -102,7 +102,7 @@
                     <td>&nbsp</td>
                 </tr>
             </table>
-         <button class="label"onclick="moveOn()">Move On</button>
+         <!--<button class="label"onclick="moveOn()">Move On</button>-->
         <div id="comp-shape" shape="rect" alt="Zoom" onclick="clickFunc('comp-shape')" ></div>
         <div id="blue-shape" shape="rect" alt="Zoom" onclick="clickFunc('blue-shape')"></div>
         <div id="front-shape" shape="rect" alt="Zoom" onclick="clickFunc('front-shape')"></div>

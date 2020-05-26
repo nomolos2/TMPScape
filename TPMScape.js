@@ -649,3 +649,7 @@ function correctFinal(){
 function failureFinal(){
   //alert('incorrect')
 }
+function deleteContent(){
+  inputBox = document.querySelector("#finalInput")
+  inputBox.value = ""
+}
