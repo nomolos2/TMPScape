@@ -739,18 +739,22 @@
     padding: 8px;
     background-color: #424242;
     opacity: 100%;
-  }
-#quad{
-    position: absolute;  
-    color:white;
-    left:30%;
-    margin-top:-300;
-    font-size:125vh; 
-    display:none;      
 }
 #quadraticWords{
-    position: absolute;  
-    top:50;
-    left:0;
+    position:relative;
+    top:130;
+    left:780;
+    color:#FFFFFF;
+    font-size:30;
+    background-color:#212121;
+    border-radius:2px;
+    width:360px;
+    height:220px;
     display:none;
+    padding: 10px;
+    font-family: Trebuchet MS;
+    opacity: 80%;
+}
+#twenty-three{
+    font-size: 15;
 }
