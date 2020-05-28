@@ -85,7 +85,7 @@ function checkHint(name){
 
 }
 // Set the date we're counting down to
-let countDownDate = Date.now() + 60000000
+let countDownDate = Date.now() + 600000
 
 
 // Update the count down every 1 second
