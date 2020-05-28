@@ -544,14 +544,8 @@ function taliffFunction(choice){
 }
 */
 function lightFunction(){ //Goehring
-  //this is a blank function
-  let Ushape = document.querySelector("#quad")
-  Ushape.style.display="block"
   let words = document.querySelector("#quadraticWords")
-  words.style.display="block"
-
-
-  
+  words.style.display="block" 
 }
 function compFunction(){ //#1 - find the errors in the python code
   let comp = document.getElementById('findingErrors')
