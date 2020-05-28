@@ -340,7 +340,6 @@ function reappear(){
   input.innerHTML = "<input id='hidden-box'></input>&nbsp&nbsp<button onclick='checkAnswer(\"extravaganza\",celeCorrect, celeWrong,\"hidden-box\")'>SUBMIT ANSWER LOWERCASE</button>"
 }
 function reappear3(){
-  debugger
   let words = document.getElementById('quadraticWords')
   words.innerHTML =  "<p >Speaking of phtons... photons are know for causing PHOTOSYNTHESIS. </p><input id='twenty-three' onchange=\"checkAnswer('23',smileCorrect,smileWrong,'twenty-three')\">"}
 function reappear2(){
